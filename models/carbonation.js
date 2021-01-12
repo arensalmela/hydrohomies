@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
-  let Brand = sequelize.define(
-    "Brand",
+  let Bubbles = sequelize.define(
+    "Bubbles",
     {
       id: {
         type: DataTypes.Int,
@@ -10,17 +10,15 @@ module.exports = function (sequelize, DataTypes) {
         },
       },
 
-      brand_name: {
-        type: DataTypes.STRING,
+      carbonation: {
+        type: DataTypes.BOOLEAN,
         allowNull: false,
-        validate: {
-          len: [1],
-        },
+        defaultValue: false,
       },
     },
     {
       freezeTableName: true,
     }
   );
-  return Review;
+  return Bubbles;
 };

@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
-  let Brand = sequelize.define(
-    "Brand",
+  let Flavor = sequelize.define(
+    "Flavor",
     {
       id: {
         type: DataTypes.Int,
@@ -10,7 +10,7 @@ module.exports = function (sequelize, DataTypes) {
         },
       },
 
-      brand_name: {
+      flavor: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -22,5 +22,5 @@ module.exports = function (sequelize, DataTypes) {
       freezeTableName: true,
     }
   );
-  return Review;
+  return Flavor;
 };
