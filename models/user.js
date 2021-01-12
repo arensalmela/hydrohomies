@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
-  let Brand = sequelize.define(
-    "Brand",
+  let User = sequelize.define(
+    "User",
     {
       id: {
         type: DataTypes.Int,
@@ -10,7 +10,14 @@ module.exports = function (sequelize, DataTypes) {
         },
       },
 
-      brand_name: {
+      user_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1],
+        },
+      },
+      email: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -22,5 +29,12 @@ module.exports = function (sequelize, DataTypes) {
       freezeTableName: true,
     }
   );
-  return Review;
+
+  //***user can have multiple posts
+  User.associate = function (models) {
+    User.hasMany(models.post, {
+      onDelete: "cascade",
+    });
+  };
+  return User;
 };
