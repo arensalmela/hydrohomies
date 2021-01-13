@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  let Flavor = sequelize.define(
+  const Flavor = sequelize.define(
     "Flavor",
     {
       flavor: {
