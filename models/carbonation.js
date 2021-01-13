@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  let Bubbles = sequelize.define(
+  const Bubbles = sequelize.define(
     "Bubbles",
     {
       carbonation: {

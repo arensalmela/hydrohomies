@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  let Brand = sequelize.define(
+  const Brand = sequelize.define(
     "Brand",
     {
       brand_name: {

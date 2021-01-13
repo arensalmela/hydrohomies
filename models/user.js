@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  let User = sequelize.define(
+  const User = sequelize.define(
     "User",
     {
       user_name: {
@@ -13,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [1],
+          isEmail: true,
         },
       },
     },
@@ -22,7 +22,7 @@ module.exports = function (sequelize, DataTypes) {
     }
   );
 
-  //***user can have multiple posts
+  //   //***user can have multiple posts
   User.associate = function (models) {
     User.hasMany(models.Review, {
       onDelete: "cascade",

@@ -41,3 +41,58 @@ button.edit {
 .top-30 {
   margin-top: 30px;
 }
+
+#hydrohomies {
+  font-family: "Lobster Two", cursive;
+  font-size: 34px;
+  color: blue;
+}
+
+#sign-in {
+  margin: auto;
+  width: 95%;
+  padding: 20px;
+}
+
+#welcome {
+  font-family: "Lobster Two", cursive;
+  font-size: 40px;
+  color: blue;
+  margin: auto;
+  text-align: center;
+}
+
+#choices {
+  text-align: center;
+}
+
+body {
+  background-image: url(../assets/1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#review-row {
+  width: 95%;
+  padding: 20px;
+}
+
+#filter-form {
+  background-color: white;
+  margin: auto;
+  width: 95%;
+  padding: 20px;
+}
+
+footer {
+  width: 100%;
+  color: black;
+  text-align: center;
+  background-color: grey;
+  padding: 10px;
+}
+
+#featured {
+  margin: auto;
+  width: 95%;
+}
