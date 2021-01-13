@@ -2,14 +2,6 @@ module.exports = function (sequelize, DataTypes) {
   let Brand = sequelize.define(
     "Brand",
     {
-      id: {
-        type: DataTypes.Int,
-        allowNull: false,
-        validate: {
-          len: [1],
-        },
-      },
-
       brand_name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -22,5 +14,5 @@ module.exports = function (sequelize, DataTypes) {
       freezeTableName: true,
     }
   );
-  return Review;
+  return Brand;
 };

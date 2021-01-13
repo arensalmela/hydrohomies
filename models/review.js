@@ -2,14 +2,6 @@ module.exports = function (sequelize, DataTypes) {
   let Review = sequelize.define(
     "Review",
     {
-      id: {
-        type: DataTypes.Int,
-        allowNull: false,
-        validate: {
-          len: [1],
-        },
-      },
-
       title: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -31,8 +23,8 @@ module.exports = function (sequelize, DataTypes) {
   );
 
   //***Don't allow post without user
-  Post.associate = function (models) {
-    Post.belongsTo(models.user, {
+  Review.associate = function (models) {
+    Review.belongsTo(models.User, {
       foreignKey: {
         allowNull: false,
       },
