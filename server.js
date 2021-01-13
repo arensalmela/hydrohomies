@@ -1,8 +1,10 @@
 // *** Dependencies================================================
 let express = require("express");
-let msql2 = require("mysql2");
-let sequelize = require("sequelize");
+// let msql2 = require("mysql2");
+// let sequelize = require("sequelize");
 require("dotenv").config();
+const inquirer = require("inquirer");
+const questions = require("./questions");
 
 // *** Sets up the Express App=======================================
 let app = express();
@@ -32,3 +34,26 @@ db.sequelize.sync({ force: true }).then(function () {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+function addReview() {
+  inquirer.prompt(questions.addReviewQuestions).then((answers) => {
+    connection.query(
+      `INSERT INTO allReviews (title, body, brand, carbonation, flavor, rating, user_name, email) VALUES ("${answers.title}", "${answers.body}", "${answers.brand}", "${answers.carbonation}", "${answers.flavor}",  "${answers.rating}", "${answers.user_name}", "${answers.email}");`,
+      function (err) {
+        if (err) throw err;
+        const query = "SELECT * FROM allReviews";
+        connection.query(query, (err, res) => {
+          if (err) throw err;
+          console.log(`
+          ---------------------------------------------
+          Your review was created successfully!
+          ---------------------------------------------`);
+          console.table(res);
+          connection.end();
+        });
+      }
+    );
+  });
+}
+
+addReview();
