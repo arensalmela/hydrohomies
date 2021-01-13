@@ -1,23 +1,10 @@
 {
   "development": {
-    "username": "root",
-    "password": "rootroot",
-    "database": "hydro_db",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": "sqlroot123",
-    "database": "hydro_db",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "use_env_variable": "DB_CONNECTION"
   },
   "production": {
-    "username": "root",
-    "password": "sqlroot123",
-    "database": "hydro_db",
-    "host": "127.0.0.1",
+
     "dialect": "mysql"
   }
 }
