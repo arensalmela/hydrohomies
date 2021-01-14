@@ -23,7 +23,7 @@
 }
 
 body {
-  background-image: url(/public/assets/1.jpg);
+  background-image: url(/assets/1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }

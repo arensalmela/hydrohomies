@@ -1,16 +1,10 @@
 let db = require("../models");
 
 module.exports = function (app) {
-  //***find all posts==================================
-  app.get("/api/posts", function (req, res) {
-    let query = {};
-    if (req.query.brand_id) {
-      query.BrandId = req.query.brand_id;
-    }
-    db.Post.findAll({
-      where: query,
-    }).then(function (dbPost) {
-      res.json(dbPost);
+  //***find all reviews==================================
+  app.get("/api/allReviews", function (req, res) {
+    db.All_Reviews.findAll({}).then(function (dbAll_Reviews) {
+      res.json(dbAll_Reviews);
     });
   });
 
