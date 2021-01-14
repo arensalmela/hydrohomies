@@ -23,7 +23,7 @@
       href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     />
     <!-- CSS -->
-    <link rel="stylesheet" href="../public/css/styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" type="text/css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -77,16 +77,18 @@
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <button
+            id="submitBTN"
+            class="btn btn-outline-success my-2 my-sm-0"
+            type="submit"
+          >
             Search
           </button>
         </form>
       </div>
     </nav>
     <div>
-      <header id="welcome">
-        Create a new Review
-      </header>
+      <header id="welcome">Create a new Review</header>
     </div>
 
     <div id="new-review" class="row">
@@ -97,65 +99,146 @@
             <form>
               <div class="form-group">
                 <div class="dropdown">
-					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-					  Select Brand
-					</button>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<!-- Fill from Brands table? -->
-					  <li><a class="dropdown-item" href="#">Polar</a></li>
-					  <li><a class="dropdown-item" href="#">San Pellegrino</a></li>
-					  <li><a class="dropdown-item" href="#">Spindrift</a></li>
-					</ul>
-				  </div>
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown button
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">H2O</a>
+                      </div>
+                  </div>
+                </div>
+                  <div id="dropdownErrMsg"></div>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <!-- Fill from Brands table? -->
+                    <li><a class="dropdown-item" href="#">Polar</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">San Pellegrino</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Spindrift</a></li>
+                  </ul>
+                </div>
               </div>
               <div class="form-group">
                 <div class="dropdown">
-					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-					  Select Flavor
-					</button>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<!-- Fill from Flavors table? -->
-					  <li><a class="dropdown-item" href="#">Lime</a></li>
-					  <li><a class="dropdown-item" href="#">Lemon</a></li>
-					  <li><a class="dropdown-item" href="#">Raspeberry Lim</a></li>
-					</ul>
-				  </div>
-			  </div>
-			  <div class="form-group">
+                  <button
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Select Flavor
+                  </button>
+                  <div id="dropdownErrMsg"></div>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <!-- Fill from Flavors table? -->
+                    <li><a class="dropdown-item" href="#">Lime</a></li>
+                    <li><a class="dropdown-item" href="#">Lemon</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Raspeberry Lim</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="form-group">
                 <div class="dropdown">
-					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-					  Bubblies?
-					</button>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<!-- Fill from ?? table? -->
-					  <li><a class="dropdown-item" href="#">Yes</a></li>
-					  <li><a class="dropdown-item" href="#">No</a></li>
-					</ul>
-				  </div>
-			  </div>
-			  <div class="mb-3">
-				<label class="form-label">Review Title</label>
-				<input type="text" class="form-control" id="new-review-title" placeholder="Review Title">
-			  </div>
-			  <div class="mb-3">
-				<label class="form-label">Review:</label>
-				<textarea class="form-control" id="new-review-body" rows="3"></textarea>
-			  </div>
-			  <div class="form-group">
+                  <button
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Bubblies?
+                  </button>
+                  <div id="dropdownErrMsg"></div>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <!-- Fill from ?? table? -->
+                    <li><a class="dropdown-item" href="#">Yes</a></li>
+                    <li><a class="dropdown-item" href="#">No</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Review Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="newReviewTitle"
+                  placeholder="Review Title"
+                />
+                <div id="newReviewTitleErrMsg"></div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Review:</label>
+                <textarea
+                  class="form-control"
+                  id="newReviewBody"
+                  rows="3"
+                ></textarea>
+                <div id="newReviewBodyErrMsg"></div>
+              </div>
+              <div class="form-group">
                 <div class="dropdown">
-					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-					  Star Rating:
-					</button>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<!-- Fill from ?? table? -->
-					  <li><a class="dropdown-item" href="#">1 Star <i class="fas fa-star"></i> </a></li>
-					  <li><a class="dropdown-item" href="#">2 Stars <i class="fas fa-star"></i> <i class="fas fa-star"></i></a></li>
-					  <li><a class="dropdown-item" href="#">3 Stars <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></a></li>
-					  <li><a class="dropdown-item" href="#">4 Stars <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></a></li>
-					  <li><a class="dropdown-item" href="#">5 Stars <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></a></li>
-					</ul>
-				  </div>
-			  </div>
+                  <button
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Star Rating
+                  </button>
+                  <div id="dropdownErrMsg"></div>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <!-- Fill from ?? table? -->
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >1 Star <i class="fas fa-star"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >2 Stars <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >3 Stars <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i> <i class="fas fa-star"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >4 Stars <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >5 Stars <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i> <i class="fas fa-star"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
           </div>
@@ -165,24 +248,21 @@
 
     <footer class="mt-3">
       <p>&copy; Hydrohomies of Bootcamp</p>
-	</footer>
-	
-	 <!-- Bootstrap JS-->
-	 <script
-	 src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-	 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	 crossorigin="anonymous"
-   ></script>
-   <script
-	 src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-	 integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-	 crossorigin="anonymous"
-   ></script>
-   <script
-	 src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-	 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-	 crossorigin="anonymous"
-   ></script>
+    </footer>
 
+    <!-- Bootstrap JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Custom Script -->
+    <script src="js/new_post.js"></script>
   </body>
 </html>
