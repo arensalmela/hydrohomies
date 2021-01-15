@@ -24,7 +24,7 @@ module.exports = function (sequelize, DataTypes) {
 
   //   //***user can have multiple posts
   User.associate = function (models) {
-    User.hasMany(models.Review, {
+    User.hasMany(models.Rating, {
       onDelete: "cascade",
     });
   };

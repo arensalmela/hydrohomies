@@ -2,7 +2,7 @@ let path = require("path");
 
 module.exports = function (app) {
   //*** loads sign in page
-  app.get("/", function (req, res) {
+  app.get("/login", function (req, res) {
     res.sendFile(path.join(__dirname + "/../public/index.html"));
   });
 
@@ -12,7 +12,7 @@ module.exports = function (app) {
   });
 
   //*** loads reviews page
-  app.get("/", function (req, res) {
+  app.get("/reviews", function (req, res) {
     res.sendFile(path.join(__dirname + "/../public/posts.html"));
   });
 };
