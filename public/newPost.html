@@ -51,40 +51,6 @@
           <li class="nav-item">
             <a class="nav-link" href="./contact.html">Contact Us</a>
           </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Brands
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">La Croix</a>
-              <a class="dropdown-item" href="#">Polar</a>
-              <a class="dropdown-item" href="#">San Pellegrino</a>
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button
-            id="submitBTN"
-            class="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
       </div>
     </nav>
     <div>
@@ -97,78 +63,29 @@
           <div class="card-body">
             <h5 class="card-title">New Review</h5>
             <form>
-              <div class="form-group">
-                <div class="dropdown">
-                  <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dropdown button
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">H2O</a>
-                      </div>
-                  </div>
-                </div>
-                  <div id="dropdownErrMsg"></div>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <!-- Fill from Brands table? -->
-                    <li><a class="dropdown-item" href="#">Polar</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">San Pellegrino</a>
-                    </li>
-                    <li><a class="dropdown-item" href="#">Spindrift</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="dropdown">
-                  <button
-                    class="btn btn-secondary dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Select Flavor
-                  </button>
-                  <div id="dropdownErrMsg"></div>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <!-- Fill from Flavors table? -->
-                    <li><a class="dropdown-item" href="#">Lime</a></li>
-                    <li><a class="dropdown-item" href="#">Lemon</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Raspeberry Lim</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="dropdown">
-                  <button
-                    class="btn btn-secondary dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Bubblies?
-                  </button>
-                  <div id="dropdownErrMsg"></div>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <!-- Fill from ?? table? -->
-                    <li><a class="dropdown-item" href="#">Yes</a></li>
-                    <li><a class="dropdown-item" href="#">No</a></li>
-                  </ul>
-                </div>
-              </div>
+              <label for="brands">Choose a Brand:</label>
+              <select name="brand" id="brand" class="chzn-select">
+              </select>
+
+              <label for="flavors">Choose a Flavor:</label>
+              <select name="flavor" id="flavor" class="chzn-select">
+              </select>
+
+              <label for="carbonation">Bubbles?</label>
+              <select name="carbonation" id="carbonation" class="chzn-select">
+                <option value="1">Yes!</option>
+                <option value="2">No</option>
+              </select>
+              
+              <label for="rating">Rating</label>
+              <select name="rating" id="rating" class="chzn-select">
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+              </select>
+              
               <div class="mb-3">
                 <label class="form-label">Review Title</label>
                 <input
@@ -188,57 +105,9 @@
                 ></textarea>
                 <div id="newReviewBodyErrMsg"></div>
               </div>
-              <div class="form-group">
-                <div class="dropdown">
-                  <button
-                    class="btn btn-secondary dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Star Rating
-                  </button>
-                  <div id="dropdownErrMsg"></div>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <!-- Fill from ?? table? -->
-                    <li>
-                      <a class="dropdown-item" href="#"
-                        >1 Star <i class="fas fa-star"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#"
-                        >2 Stars <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i
-                      ></a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#"
-                        >3 Stars <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i> <i class="fas fa-star"></i
-                      ></a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#"
-                        >4 Stars <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i> <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i
-                      ></a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#"
-                        >5 Stars <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i> <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i> <i class="fas fa-star"></i
-                      ></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              ></div>
+              
+
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
           </div>
@@ -260,8 +129,11 @@
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous">
+      $(function () {
+        $(".chzn-select").chosen();
+      });
+    </script>
     <!-- Custom Script -->
     <script src="js/new_post.js"></script>
   </body>

@@ -27,6 +27,16 @@ module.exports = function (app) {
     });
   });
 
+  //***save new review to All_Reviews table==================================
+  app.post("/api/new_review", function (req, res) {
+    const answers = req.body;
+    const pushReview = `INSERT INTO allReviews (title, body, brand, carbonation, flavor, rating, user_name, email, createdAt, updatedAt) VALUES ("${answers.title}", "${answers.body}", "${answers.brand}", "${answers.carbonation}", "${answers.flavor}",  "${answers.rating}", "${answers.user_name}", "${answers.email}", current_timestamp(), CURRENT_TIMESTAMP);`;
+
+    const allReviews = db.All_Reviews.create(answers).then((results) =>
+      res.json(results)
+    );
+  });
+
   //***delete one post==================================
   app.delete("/api/posts/:id", function (req, res) {
     db.Post.destroy({

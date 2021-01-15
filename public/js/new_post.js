@@ -59,63 +59,69 @@ $(document).ready(function () {
     return /\d/.test(myString);
   }
 
-  //*** Call API to fill review cards==========================================
-  function getCardInfo(title) {
-    const settings = {
-      async: true,
-      crossDomain: true,
-      url: "????????" + title,
-      method: "GET",
-      headers: {
-        "??????": "?????",
-        "????": "????",
-      },
-    };
-
-    //***AJAX request for dropdown menus==========================================
-    $.ajax({ method: "GET", url: "/api/brands" }).done((result) => {
-      console.log(result);
-      result.forEach((brand) => {
-        $("//append A tags");
-      });
-    });
-
-    //***AJAX request for cards==========================================
-    $.ajax(settings).done(function (response) {
-      //*** fill 10 cards
-      for (i = 0; i <= 10; i++) {
-        const reviewCard = response.result.data[i];
-        let title = reviewCard?.title;
-        let body = reviewCard?.body;
-        let rating = reviewCard?.rating;
-        let brand = reviewCard?.brand;
-        let carbonation = reviewCard?.carbonation;
-        let flavor = reviewCard?.flavor;
-        let user_name = reviewCard?.user_name;
-
-        $(".card").textContent = title;
-
-        const template = `
-            <ul>
-                <ul>What ${user_name} thought about ${flavor} ${brand}</ul>
-                <ul>Review -
-                    ${body}</ul>
-                <ul>Rating - ${rating}    Bubblies? - ${carbonation}</ul>
-                </ul>`;
-
-        const amazon =
-          "https://www.amazon.com/s?k=" +
-          brand +
-          "+" +
-          flavor +
-          "&ref=nb_sb_noss_2";
-
-        $("#cardInfo").prepend(template);
-        //*need to create cardInfo id's in HTML
-
-        $("#amazonBTN").attr("href", amazon);
-        //*need to create buttons to link to amazon site at bottom of each card - id should be amazonBTN- and some number
+  //***AJAX request for dropdown menus==========================================
+  $.ajax({ method: "GET", url: "/api/brands" }).done((result) => {
+    console.log(result);
+    result.forEach((brand) => {
+      if (brand !== "" || brand !== null) {
+        $("#brand").append(`<option>${brand.brand_name}</option>`);
+      } else {
       }
     });
-  }
+    $(".chzn-select").trigger("chosen:updated");
+  });
+
+  $.ajax({ method: "GET", url: "/api/flavors" }).done((result) => {
+    console.log(result);
+    result.forEach((flavor) => {
+      if (flavor !== "" || flavor !== null) {
+        $("#flavor").append(`<option>${flavor.flavor}</option>`);
+      } else {
+      }
+    });
+    $(".chzn-select").trigger("chosen:updated");
+  });
+
+  //***AJAX request for cards==========================================
+  $.ajax({ method: "GET", url: "/api/All_Reviews" }).done(function (response) {
+    //*** fill 10 cards
+    for (let i = 0; i < response.result.data.length; i++) {
+      const reviewCard = response.result.data[i];
+      let title = reviewCard.title;
+      let body = reviewCard.body;
+      let rating = reviewCard.rating;
+      let brand = reviewCard.brand;
+      let carbonation = reviewCard.carbonation;
+      let flavor = reviewCard.flavor;
+      let user_name = reviewCard.user_name;
+
+      $(".card").textContent = title;
+      const amazon =
+        "https://www.amazon.com/s?k=" +
+        brand +
+        "+" +
+        flavor +
+        "&ref=nb_sb_noss_2";
+
+      const template = `
+      <div id="posts" class="card">
+      <div class="card-header">
+        ${title} by ${user_name}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">${brand} ${flavor} ${carbonation}</h5>
+        <p class="card-text">${body}</p>
+        <p class="card-text">${rating}</p>
+        <a href=${amazon}>Click here to purchase from Amazon</a>
+      </div>
+  </div>`;
+
+      $("#cardInfo").prepend(template);
+      //*need to create cardInfo id's in HTML
+
+      if (i === 9) {
+        return;
+      }
+    }
+  });
 });

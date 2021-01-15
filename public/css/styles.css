@@ -53,10 +53,20 @@ footer {
   width: 95%;
 }
 
+#posts {
+  margin: auto;
+  width: 95%;
+}
+
 #new-review {
   margin: auto;
   width: 95%;
   padding: 20px;
+}
+
+#action-btn {
+  margin: auto;
+  display: flex;
 }
 
 ::-webkit-scrollbar {

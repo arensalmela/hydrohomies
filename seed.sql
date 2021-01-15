@@ -16,6 +16,14 @@ select * from brand
 
 -- ==================================================================
 
+use hydro_db;
+
+INSERT INTO Bubbles (carbonation, createdAt, updatedAt)
+VALUES (1, current_timestamp(), CURRENT_TIMESTAMP);
+
+INSERT INTO Bubbles (carbonation, createdAt, updatedAt)
+VALUES (2, current_timestamp(), CURRENT_TIMESTAMP);
+
 select * from Bubbles
 
 -- ==================================================================

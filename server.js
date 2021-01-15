@@ -29,29 +29,39 @@ require("./routes/water-api-routes.js")(app);
 
 // *** Syncing our sequelize models and then starting our Express app
 // *** =============================================================
-db.sequelize.sync().then(function () {
+db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
-});
+  const flavor = db.Flavor.create({
+    flavor: "Lime",
+  }).then();
 
-function addReview() {
-  inquirer.prompt(questions.addReviewQuestions).then((answers) => {
-    connection.query(
-      `INSERT INTO allReviews (title, body, brand, carbonation, flavor, rating, user_name, email, createdAt, updatedAt) VALUES ("${answers.title}", "${answers.body}", "${answers.brand}", "${answers.carbonation}", "${answers.flavor}",  "${answers.rating}", "${answers.user_name}", "${answers.email}", current_timestamp(), CURRENT_TIMESTAMP);`,
-      function (err) {
-        if (err) throw err;
-        const query = "SELECT * FROM allReviews";
-        connection.query(query, (err, res) => {
-          if (err) throw err;
-          console.log(`
-          ---------------------------------------------
-          Your review was created successfully!
-          ---------------------------------------------`);
-          console.table(res);
-          connection.end();
-        });
-      }
-    );
+  const brand = db.Brand.create({
+    flavor: "Polar",
+  }).then();
+
+  const user = db.User.create({
+    user_name: "ArenS",
+    email: "aren@email.com",
+  }).then();
+
+  const carbonation = db.Bubbles.create({
+    carbonation: 1,
+  }).then();
+
+  const flat = db.Bubbles.create({
+    carbonation: 2,
+  }).then();
+
+  const allReviews = db.All_Reviews.create({
+    brand: "Polar",
+    carbonation: 1,
+    flavor: "Cherry",
+    title: "This sucks",
+    body: "This is a terrible beverage",
+    rating: 1,
+    user_name: "aren",
+    email: "aren@email.com",
   });
-}
+});

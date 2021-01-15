@@ -87,48 +87,65 @@
       </div>
     </nav>
 
-    <!-- Start of contact form-->
-    <div class="container">
-      <form class="card-body">
-        <!-- Name input -->
-        <div class="form-outline mb-4">
-          <input type="text" id="form4Example1" class="form-control" />
-          <label class="form-label" for="form4Example1">Name</label>
+    <!-- Default form contact -->
+    <div class="container contactForm">
+      <form class="text-center border border-light p-5" action="#!">
+        <p class="h4 mb-4">
+          Contact us today - We would love to hear from you!
+        </p>
+        <!-- Name -->
+        <input
+          type="text"
+          id="defaultContactFormName"
+          class="form-control mb-4"
+          placeholder="Name"
+        />
+
+        <!-- Email -->
+        <input
+          type="email"
+          id="defaultContactFormEmail"
+          class="form-control mb-4"
+          placeholder="E-mail"
+        />
+
+        <!-- Subject -->
+        <label>What would you like to submit?</label>
+        <select class="browser-default custom-select mb-4">
+          <option value="" disabled>Choose option</option>
+          <option value="1" selected>Submit a Question</option>
+          <option value="2">Provide user/website feedback</option>
+        </select>
+
+        <!-- Message -->
+        <div class="form-group">
+          <textarea
+            class="form-control rounded-0"
+            id="exampleFormControlTextarea2"
+            rows="3"
+            placeholder="Message"
+          ></textarea>
         </div>
 
-        <!-- Email input -->
-        <div class="form-outline mb-4">
-          <input type="email" id="form4Example2" class="form-control" />
-          <label class="form-label" for="form4Example2">Email address</label>
-        </div>
-
-        <!-- Message input -->
-        <div class="form-outline mb-4">
-          <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-          <label class="form-label" for="form4Example3">Message</label>
-        </div>
-
-        <!-- Checkbox -->
-        <div class="form-check d-flex justify-content-center mb-4">
+        <!-- Copy -->
+        <div class="custom-control custom-checkbox mb-4">
           <input
-            class="form-check-input me-2"
             type="checkbox"
-            value=""
-            id="form4Example4"
-            checked
+            class="custom-control-input"
+            id="defaultContactFormCopy"
           />
-          <label class="form-check-label" for="form4Example4">
-            Send me a copy of this message
-          </label>
+          <label class="custom-control-label" for="defaultContactFormCopy"
+            >Send me a copy of this message</label
+          >
         </div>
 
-        <!-- Submit button -->
-        <button type="submit" class="btn btn-primary btn-block mb-4">
+        <!-- Send button -->
+        <button class="btn btn-info btn-block contactSubmitBtn" type="submit">
           Send
         </button>
       </form>
     </div>
-    <!-- End of contact form-->
+    <!-- Default form contact -->
 
     <footer class="mt-3">
       <p>&copy; Hydrohomies of Bootcamp</p>
