@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
-  const Review = sequelize.define(
-    "Review",
+  const Rating = sequelize.define(
+    "Rating",
     {
       rating: {
         type: DataTypes.INTEGER,
@@ -18,12 +18,12 @@ module.exports = function (sequelize, DataTypes) {
   );
 
   //***Don't allow post without user
-  Review.associate = function (models) {
-    Review.belongsTo(models.User, {
+  Rating.associate = function (models) {
+    Rating.belongsTo(models.User, {
       foreignKey: {
         allowNull: false,
       },
     });
   };
-  return Review;
+  return Rating;
 };

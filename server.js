@@ -50,6 +50,28 @@ db.sequelize.sync({ force: true }).then(function () {
     carbonation: 2,
   }).then();
 
+  const rating1 = db.Rating.create({
+    rating: 1,
+  }).then();
+
+  const rating2 = db.Rating.create({
+    rating: 2,
+  }).then();
+
+  const rating3 = db.Rating.create({
+    rating: 3,
+  }).then();
+
+  const rating4 = db.Rating.create({
+    rating: 4,
+  }).then();
+
+  const rating5 = db.Rating.create({
+    rating: 5,
+  }).then();
+
+
+
   const allReviews = db.All_Reviews.create({
     brand: "Polar",
     carbonation: 1,
