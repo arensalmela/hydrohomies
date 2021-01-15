@@ -1,5 +1,7 @@
 # Project: Hydrohomies
 
+Utilized https://github.com/harvesthq/chosen as a new technology.
+
   Deployed Site Link - > 
 
   Video Walk through Link -> 

@@ -59,7 +59,7 @@ $(document).ready(function () {
     return /\d/.test(myString);
   }
 
-  //***AJAX request for dropdown menus==========================================
+  //***AJAX requests for dropdown menus==========================================
   $.ajax({ method: "GET", url: "/api/brands" }).done((result) => {
     console.log(result);
     result.forEach((brand) => {
@@ -76,6 +76,32 @@ $(document).ready(function () {
     result.forEach((flavor) => {
       if (flavor !== "" || flavor !== null) {
         $("#flavor").append(`<option>${flavor.flavor}</option>`);
+      } else {
+      }
+    });
+    $(".chzn-select").trigger("chosen:updated");
+  });
+
+  $.ajax({ method: "GET", url: "/api/carbonation" }).done((result) => {
+    console.log(result);
+    result.forEach((Bubbles) => {
+      if (Bubbles !== "" || Bubbles !== null) {
+        if (Bubbles.carbonation === 1) {
+          $("#carbonation").append(`<option>Yes Bubbles!</option>`);
+        } else {
+          $("#carbonation").append(`<option>No Bubbles!</option>`);
+        }
+      } else {
+      }
+    });
+    $(".chzn-select").trigger("chosen:updated");
+  });
+
+  $.ajax({ method: "GET", url: "/api/rating" }).done((result) => {
+    console.log(result);
+    result.forEach((Review) => {
+      if (Review !== "" || Review !== null) {
+        $("#rating").append(`<option>${Review.rating}</option>`);
       } else {
       }
     });

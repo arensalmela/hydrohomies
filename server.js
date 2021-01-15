@@ -1,10 +1,6 @@
 // *** Dependencies================================================
-let express = require("express");
-// let msql2 = require("mysql2");
-// let sequelize = require("sequelize");
-require("dotenv").config();
-const inquirer = require("inquirer");
-const questions = require("./questions");
+const express = require("express");
+// require("dotenv").config();
 
 // *** Sets up the Express App=======================================
 let app = express();
