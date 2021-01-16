@@ -15,4 +15,9 @@ module.exports = function (app) {
   app.get("/reviews", function (req, res) {
     res.sendFile(path.join(__dirname + "/../public/posts.html"));
   });
+
+  //*** loads suggestion us page
+  app.get("/suggestion", function (req, res) {
+    res.sendFile(path.join(__dirname + "/../public/suggestion.html"));
+  });
 };
