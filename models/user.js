@@ -22,11 +22,5 @@ module.exports = function (sequelize, DataTypes) {
     }
   );
 
-  //   //***user can have multiple posts
-  User.associate = function (models) {
-    User.hasMany(models.Rating, {
-      onDelete: "cascade",
-    });
-  };
   return User;
 };

@@ -17,13 +17,5 @@ module.exports = function (sequelize, DataTypes) {
     }
   );
 
-  //***Don't allow post without user
-  Rating.associate = function (models) {
-    Rating.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false,
-      },
-    });
-  };
   return Rating;
 };
