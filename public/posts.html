@@ -43,13 +43,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="./index.html"
+            <a class="nav-link" href="#"
               ><i class="fas fa-home"></i
               ><span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./contact.html">Contact Us</a>
+            <a class="nav-link" href="./newPost.html">Create a Review</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./suggestion.html">Suggestion Box</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./index.html">Logout</a>
@@ -59,36 +62,9 @@
     <div>
       <header id="welcome">Most Recent Hydrohomies Reviews</header>
     </div>
+    <div id = "cardInfo"></div>
 
-    <div id="cardInfo" class="card">
-        <div class="card-header">
-          {Title of Review}
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Brand, Flavor, Bubblies</h5>
-          <p class="card-text">Review body</p>
-        </div>
-	  </div>
-	  <br>
-    <div id="posts" class="card">
-        <div class="card-header">
-          {Title of Review}
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Brand, Flavor, Bubblies</h5>
-          <p class="card-text">Review body</p>
-        </div>
-	  </div>
-	  <br>
-    <div id="posts" class="card">
-        <div class="card-header">
-          {Title of Review}
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Brand, Flavor, Bubblies</h5>
-          <p class="card-text">Review body</p>
-        </div>
-	  </div>
+  
 	  <br>
 
     <footer class="mt-3">
@@ -107,14 +83,24 @@
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
   crossorigin="anonymous"
 ></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen-sprite.png"></script> -->
+<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen-sprite@2x.png"></script> -->
+<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css"></script> -->
+<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css"></script> -->
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.js"></script>
+<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"></script> -->
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.proto.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.proto.min.js"></script>
 <script type="text/javascript">
-  $(function () {
-    $(".chzn-select").chosen();
-  });
+      $(function () {
+        $(".chzn-select").chosen();
+      });
 </script>
+<script src="js/posts.js"></script>
 
 <!-- Custom Script -->
 <script> </script>
-    ></script>
+
   </body>
 </html>

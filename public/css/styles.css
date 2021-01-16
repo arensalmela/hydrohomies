@@ -13,7 +13,7 @@
 #welcome {
   font-family: "Lobster Two", cursive;
   font-size: 40px;
-  color: blue;
+  color: white;
   margin: auto;
   text-align: center;
 }
@@ -46,6 +46,9 @@ footer {
   text-align: center;
   background-color: grey;
   padding: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 
 #featured {
@@ -67,6 +70,22 @@ footer {
 #action-btn {
   margin: auto;
   display: flex;
+}
+
+#sign-in-error {
+  color: red;
+}
+
+#new-user-error {
+  color: red;
+}
+
+#add-brand-error {
+  color: red;
+}
+
+#add-flavor-error {
+  color: red;
 }
 
 ::-webkit-scrollbar {
@@ -92,4 +111,14 @@ footer {
 }
 ::-webkit-resizer {
   background-color: #666;
+}
+
+.newBrandRow,
+.newFlavorRow {
+  display: inline-flex;
+}
+.addNewFlavor,
+.addNewBrand {
+  margin-left: 20px;
+  color: white;
 }

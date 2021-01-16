@@ -27,7 +27,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a id="hydrohomies" class="navbar-brand" href="#">Hydrohomies</a>
+      <a id="hydrohomies" class="navbar-brand" href="./posts.html">Hydrohomies</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -43,13 +43,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="./index.html"
+            <a class="nav-link" href="./posts.html"
               ><i class="fas fa-home"></i
               ><span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./contact.html">Contact Us</a>
+            <a class="nav-link" href="#">Create a Review</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./suggestion.html">Suggestion Box</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./index.html">Logout</a>
@@ -67,15 +70,18 @@
             <h5 class="card-title">New Review</h5>
             <form>
               <label for="brands">Choose a Brand:</label>
+
               <select name="brand" id="brand" class="chzn-select">
+                
+                
               </select>
 
               <label for="flavors">Choose a Flavor:</label>
               <select name="flavor" id="flavor" class="chzn-select">
               </select>
 
-              <label for="carbonation">Bubbles?</label>
-              <select name="carbonation" id="carbonation" class="chzn-select">
+              <label for="bubbles">Bubbles?</label>
+              <select name="bubbles" id="bubbles" class="chzn-select">
               </select>
               
               <label for="rating">Rating</label>
@@ -97,6 +103,7 @@
                 <textarea
                   class="form-control"
                   id="newReviewBody"
+                  placeholder="Review Text Here"
                   rows="3"
                 ></textarea>
                 <div id="newReviewBodyErrMsg"></div>
@@ -104,7 +111,9 @@
               ></div>
               
 
-              <button id="submitBTN" type="button" class="btn btn-primary">Submit</button>
+              <button id="submitBTN" type="button" class="btn btn-primary">Submit
+                <a href="./posts.html"></a>
+              </button>
             </form>
           </div>
         </div>
@@ -126,10 +135,21 @@
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous">
-      $(function () {
-        $(".chzn-select").chosen();
-      });
     </script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen-sprite.png"></script> -->
+    <!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen-sprite@2x.png"></script> -->
+    <!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css"></script> -->
+    <!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css"></script> -->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.js"></script>
+    <!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"></script> -->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.proto.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.proto.min.js"></script>
+     <!-- <script type="text/javascript">
+           $(function () {
+             $(".chzn-select").chosen();
+           });
+     </script> -->
     <!-- Custom Script -->
     <script src="./js/new_post.js"></script>
   </body>

@@ -5,9 +5,9 @@ module.exports = function (sequelize, DataTypes) {
       brand: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-          len: [1],
-        },
+        // validate: {
+        //   len: [1],
+        // },
       },
       carbonation: {
         type: DataTypes.BOOLEAN,
@@ -17,44 +17,37 @@ module.exports = function (sequelize, DataTypes) {
       flavor: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-          len: [1],
-        },
+        // validate: {
+        //   len: [1],
+        // },
       },
       title: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-          len: [1],
-        },
+        // validate: {
+        //   len: [1],
+        // },
       },
       body: {
         type: DataTypes.TEXT,
         allowNull: false,
-        validate: {
-          len: [1],
-        },
+        // validate: {
+        //   len: [1],
+        // },
       },
       rating: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BOOLEAN,
         allowNull: false,
-        validate: {
-          len: [1],
-        },
+        // validate: {
+        //   len: [1],
+        // },
       },
       user_name: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-          len: [1],
-        },
-      },
-      email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1],
-        },
+        // validate: {
+        //   len: [1],
+        // },
       },
     },
     {
