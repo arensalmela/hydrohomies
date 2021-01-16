@@ -1,6 +1,6 @@
 // *** Dependencies================================================
 const express = require("express");
-// require("dotenv").config();
+require("dotenv").config();
 
 // *** Sets up the Express App=======================================
 let app = express();
@@ -34,7 +34,7 @@ db.sequelize.sync({ force: true }).then(function () {
   }).then();
 
   const brand = db.Brand.create({
-    flavor: "Polar",
+    brand_name: "Polar",
   }).then();
 
   const user = db.User.create({
@@ -69,8 +69,6 @@ db.sequelize.sync({ force: true }).then(function () {
   const rating5 = db.Rating.create({
     rating: 5,
   }).then();
-
-
 
   const allReviews = db.All_Reviews.create({
     brand: "Polar",
