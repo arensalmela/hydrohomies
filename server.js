@@ -29,45 +29,48 @@ db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
-  const flavor = db.Flavor.create({
+  const flavor1 = db.Flavor.create({
     flavor: "Lime",
   }).then();
 
-  const brand = db.Brand.create({
+  const flavor2 = db.Flavor.create({
+    flavor: "Peach",
+  }).then();
+
+  const flavor3 = db.Flavor.create({
+    flavor: "Mango",
+  }).then();
+
+  const brand1 = db.Brand.create({
     brand_name: "Polar",
+  }).then();
+
+  const brand2 = db.Brand.create({
+    brand_name: "Bubby",
+  }).then();
+
+  const brand3 = db.Brand.create({
+    brand_name: "La Croix",
   }).then();
 
   const user = db.User.create({
     user_name: "ArenS",
-    email: "aren@email.com",
   }).then();
 
   const carbonation = db.Bubbles.create({
-    carbonation: 1,
+    carbonation: true,
   }).then();
 
   const flat = db.Bubbles.create({
-    carbonation: 2,
+    carbonation: false,
   }).then();
 
   const rating1 = db.Rating.create({
-    rating: 1,
+    rating: true,
   }).then();
 
   const rating2 = db.Rating.create({
-    rating: 2,
-  }).then();
-
-  const rating3 = db.Rating.create({
-    rating: 3,
-  }).then();
-
-  const rating4 = db.Rating.create({
-    rating: 4,
-  }).then();
-
-  const rating5 = db.Rating.create({
-    rating: 5,
+    rating: false,
   }).then();
 
   const allReviews = db.All_Reviews.create({
@@ -76,8 +79,7 @@ db.sequelize.sync({ force: true }).then(function () {
     flavor: "Cherry",
     title: "This sucks",
     body: "This is a terrible beverage",
-    rating: 1,
+    rating: true,
     user_name: "aren",
-    email: "aren@email.com",
   });
 });

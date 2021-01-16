@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hydrohomies: Find and Rate H20!</title>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/styles.css" type="text/css" />
+  </head>
+
+
+  <body>
+      <!--Start Nav Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a id="hydrohomies" class="navbar-brand" href="./posts.html">Hydrohomies</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="./posts.html"
+              ><i class="fas fa-home"></i
+              ><span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Create a Review</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Suggestion Box</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Logout</a>
+          </li>
+      </div>
+    </nav>
+    <!--End Nav Bar-->
+
+    <!--Start page header-->
+    <div>
+      <header id="welcome">Hydrohomies Suggestion Box!</header>
+    </div>
+    <!--End page header-->
+
+    <!--Start container for suggestion form-->
+    <div class="container contactForm">
+        <form class="text-center border border-light p-5" action="#!">
+          <p id="welcome" class="h4 mb-4">
+            Don't see a brand or flavor you want to tell us about? Tell us about it!
+          </p>
+          
+          <div class="form-outline">
+            <div class="row newBrandRow">
+            <!-- Name -->
+                <input
+                    type="text"
+                    id="typeNewBrand"
+                    class="form-control"
+                    placeholder="Add Brand Here"
+                    style="width:350px"
+                />
+                <a id="add-brand-btn" type="button" class="addNewBrand btn btn-primary"> Add Brand
+                </a>
+                <!-- Junko note to self: fix the CSS on this later -->
+                <div id="add-brand-error"></div>                
+            </div>
+          </div>
+          <br>    
+          <div class="form-outline">
+            <div class="row newFlavorRow">
+                <!-- Add New Flavor Here -->
+                <input
+                    type="text"
+                    id="typeNewFlavor" 
+                    class="form-control"
+                    placeholder="Add Flavor Here"
+                    style="width:350px"
+                />
+                <a id="add-flavor-btn" type="button" class="addNewFlavor btn btn-primary"> Add Brand
+                </a>
+                <!-- Junko note to self: fix the CSS on this later -->
+                <div id="add-flavor-error"></div>                      
+            </div>
+          </div>
+        </form>
+      </div>
+      <!--End of container for suggestion-->
+    
+
+    <footer class="mt-3">
+        <p>&copy; Hydrohomies of Bootcamp</p>
+    </footer>
+
+<!-- Bootstrap JS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous"
+></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen-sprite.png"></script> -->
+<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen-sprite@2x.png"></script> -->
+<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css"></script> -->
+<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css"></script> -->
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.js"></script>
+<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"></script> -->
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.proto.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.proto.min.js"></script>
+<script type="text/javascript">
+      $(function () {
+        $(".chzn-select").chosen();
+      });
+</script>
+
+<!-- Custom Script -->
+<script src="js/user_home.js"></script>
+<script src="js/suggestion.js"></script>
+
+  </body>
+</html>

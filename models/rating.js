@@ -3,13 +3,9 @@ module.exports = function (sequelize, DataTypes) {
     "Rating",
     {
       rating: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BOOLEAN,
         allowNull: false,
-        validate: {
-          isInt: true,
-          isIn: [[1, 2, 3, 4, 5]],
-          len: [1],
-        },
+        defaultValue: false,
       },
     },
     {

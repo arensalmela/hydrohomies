@@ -1,54 +1,67 @@
-console.log("Do a thing");
-
 $(document).ready(function () {
   //***user entry error checks==========================================
   $("#submitBTN").on("click", function () {
     $("#newReviewTitleErrMsg").html("");
     $("#newReviewBodyErrMsg").html("");
     $("#dropdownErrMsg").html("");
+    const brand = $("#brand").val();
+    const flavor = $("#flavor").val();
+    const bubbles = $("#bubbles").val();
+    const rating = $("#rating").val();
+    const title = $("#newReviewTitle").val();
+    const body = $("#newReviewBody").val();
+    const userName = localStorage.getItem("userName");
 
-    const enteredTitleText = $("#newReviewTitle").val();
-    const enteredBodyText = $("#newReviewBody").val();
-    const dropdownText = $("#dropdownMenuButton").val();
+    const newReview = {
+      brand: brand,
+      flavor: flavor,
+      bubbles: bubbles,
+      rating: rating,
+      title: title,
+      body: body,
+      user_name: userName,
+    };
 
     //*title errors==========================================
-    if (isValid(enteredTitleText)) {
+    if (isValid(title)) {
     } else {
       $("#newReviewTitleErrMsg").append(
         $("<p>Do not include special characters</p>")
       );
       return;
     }
-    if (hasNumber(enteredTitleText)) {
+    if (hasNumber(title)) {
       $("#newReviewTitleErrMsg").append($("<p>Do not include numbers</p>"));
       return;
     } else {
     }
 
     //*body errors==========================================
-    $("#newReviewBodyErrMsg").html("");
-    if (isValid(enteredBodyText)) {
-    } else {
+    if ($("#newReviewBody") === "") {
       $("#newReviewTitleErrMsg").append($("<p>Please write a review</p>"));
-      return;
+    } else {
     }
 
     //*dropdown menus errors==========================================
     if (
-      dropdownText === "Select Brand" ||
-      dropdownText === "Select Flavor" ||
-      dropdownText === "Bubbles?" ||
-      dropdownText === "Star Rating"
+      $("#brand").val() === undefined ||
+      $("#flavor").val() === undefined ||
+      $("#bubbles").val() === undefined ||
+      $("#rating").val() === undefined
     ) {
       $("#dropdownErrMsg").append($("<p>Select an item from the dropdown</p>"));
       return;
     } else {
     }
 
-    //** Set to local storage ============================================
-    let title = $("#newReviewTitle").val();
-    localStorage.setItem("reviewTitle", title);
-    getCardInfo(title);
+    //***AJAX request for cards==========================================
+    $.ajax({
+      method: "POST",
+      url: "/api/new_review",
+      data: newReview,
+    }).done(function (response) {
+      console.log(response);
+    });
   });
 
   function isValid(str) {
@@ -61,10 +74,12 @@ $(document).ready(function () {
 
   //***AJAX requests for dropdown menus==========================================
   $.ajax({ method: "GET", url: "/api/brands" }).done((result) => {
-    console.log(result);
+    $("#brand").append(`<option selected>Select Brand</option>`);
     result.forEach((brand) => {
       if (brand !== "" || brand !== null) {
-        $("#brand").append(`<option>${brand.brand_name}</option>`);
+        $("#brand").append(
+          `<option value= "${brand.brand_name}">${brand.brand_name}</option>`
+        );
       } else {
       }
     });
@@ -72,24 +87,26 @@ $(document).ready(function () {
   });
 
   $.ajax({ method: "GET", url: "/api/flavors" }).done((result) => {
-    console.log(result);
+    $("#flavor").append(`<option selected>Select Flavor</option>`);
     result.forEach((flavor) => {
       if (flavor !== "" || flavor !== null) {
-        $("#flavor").append(`<option>${flavor.flavor}</option>`);
+        $("#flavor").append(
+          `<option value= "${flavor.flavor}">${flavor.flavor}</option>`
+        );
       } else {
       }
     });
     $(".chzn-select").trigger("chosen:updated");
   });
 
-  $.ajax({ method: "GET", url: "/api/carbonation" }).done((result) => {
-    console.log(result);
+  $.ajax({ method: "GET", url: "/api/bubbles" }).done((result) => {
+    $("#bubbles").append(`<option selected>Select Bubbles</option>`);
     result.forEach((Bubbles) => {
       if (Bubbles !== "" || Bubbles !== null) {
-        if (Bubbles.carbonation === 1) {
-          $("#carbonation").append(`<option>Yes Bubbles!</option>`);
+        if (Bubbles.carbonation === true) {
+          $("#bubbles").append(`<option value= "true">Yes Bubbles!</option>`);
         } else {
-          $("#carbonation").append(`<option>No Bubbles!</option>`);
+          $("#bubbles").append(`<option value= "false">No Bubbles!</option>`);
         }
       } else {
       }
@@ -98,56 +115,21 @@ $(document).ready(function () {
   });
 
   $.ajax({ method: "GET", url: "/api/rating" }).done((result) => {
-    console.log(result);
-    result.forEach((Review) => {
-      if (Review !== "" || Review !== null) {
-        $("#rating").append(`<option>${Review.rating}</option>`);
+    $("#rating").append(`<option selected>Select Rating</option>`);
+    result.forEach((Rating) => {
+      if (Rating !== "" || Rating !== null) {
+        if (Rating.rating === true) {
+          $("#rating").append(
+            `<option value= "${Rating.id}">Dehydrated</option>`
+          );
+        } else {
+          $("#rating").append(
+            `<option value= "${Rating.id}">Hydrated</option>`
+          );
+        }
       } else {
       }
     });
     $(".chzn-select").trigger("chosen:updated");
-  });
-
-  //***AJAX request for cards==========================================
-  $.ajax({ method: "GET", url: "/api/All_Reviews" }).done(function (response) {
-    //*** fill 10 cards
-    for (let i = 0; i < response.result.data.length; i++) {
-      const reviewCard = response.result.data[i];
-      let title = reviewCard.title;
-      let body = reviewCard.body;
-      let rating = reviewCard.rating;
-      let brand = reviewCard.brand;
-      let carbonation = reviewCard.carbonation;
-      let flavor = reviewCard.flavor;
-      let user_name = reviewCard.user_name;
-
-      $(".card").textContent = title;
-      const amazon =
-        "https://www.amazon.com/s?k=" +
-        brand +
-        "+" +
-        flavor +
-        "&ref=nb_sb_noss_2";
-
-      const template = `
-      <div id="posts" class="card">
-      <div class="card-header">
-        ${title} by ${user_name}
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">${brand} ${flavor} ${carbonation}</h5>
-        <p class="card-text">${body}</p>
-        <p class="card-text">${rating}</p>
-        <a href=${amazon}>Click here to purchase from Amazon</a>
-      </div>
-  </div>`;
-
-      $("#cardInfo").prepend(template);
-      //*need to create cardInfo id's in HTML
-
-      if (i === 9) {
-        return;
-      }
-    }
   });
 });

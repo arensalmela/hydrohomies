@@ -15,26 +15,17 @@ module.exports = function (app) {
     });
   });
 
-
-  //***find one brand==================================
-  app.get("/api/brands/:id", function (req, res) {
-    db.Brand.findOne({
-      where: {
-        id: req.params.id,
-      },
-    }).then(function (dbBrand) {
-      res.json(dbBrand);
+  //***find all bubbles==================================
+  app.get("/api/bubbles", function (req, res) {
+    db.Bubbles.findAll({}).then(function (dbBubbles) {
+      res.json(dbBubbles);
     });
   });
 
-  //***find one flavor==================================
-  app.get("/api/flavors/:id", function (req, res) {
-    db.Flavor.findOne({
-      where: {
-        id: req.params.id,
-      },
-    }).then(function (dbBrand) {
-      res.json(dbBrand);
+  //***find all ratings==================================
+  app.get("/api/rating", function (req, res) {
+    db.Rating.findAll({}).then(function (dbRating) {
+      res.json(dbRating);
     });
   });
 
