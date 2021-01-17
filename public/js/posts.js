@@ -30,9 +30,10 @@ $(document).ready(function () {
         <h5 class="card-title">${brand} ${flavor} ${carbonation}</h5>
         <p class="card-text">${body}</p>
         <p class="card-text">${rating}</p>
-        <a href=${amazon}>Click here to purchase from Amazon</a>
+        <a target="_blank" href=${amazon}>Click here to purchase from Amazon</a>
       </div>
-  </div>`;
+  </div>
+  <br>`;
 
       $("#cardInfo").prepend(template);
       //*need to create cardInfo id's in HTML
