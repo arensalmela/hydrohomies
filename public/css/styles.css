@@ -1,13 +1,20 @@
 #hydrohomies {
   font-family: "Lobster Two", cursive;
   font-size: 34px;
-  color: blue;
+  color: teal;
 }
 
 #sign-in {
   margin: auto;
   width: 95%;
   padding: 20px;
+}
+
+#login-error-msg {
+  margin: auto;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 #welcome {
@@ -18,12 +25,26 @@
   text-align: center;
 }
 
+#welcome-home {
+  font-family: "Lobster Two", cursive;
+  font-size: 40px;
+  color:black;
+  margin: auto;
+  text-align: center;
+}
+
 #choices {
   text-align: center;
 }
 
 body {
-  background-image: url(/assets/1.jpg);
+  background-image: url(/assets/background\ 2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#home {
+  background-image: url(/assets/gif-test-2.gif);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -42,9 +63,10 @@ body {
 
 footer {
   width: 100%;
-  color: black;
+  color: white;
   text-align: center;
-  background-color: grey;
+  background-color:black;
+  opacity: 0.8;
   padding: 10px;
   position: fixed;
   left: 0;
@@ -70,6 +92,16 @@ footer {
 #action-btn {
   margin: auto;
   display: flex;
+}
+
+#submitBTN {
+  height: auto;
+  width: 200px;
+  margin: auto;
+}
+
+.dropdown-labels {
+  padding-left: 30px;
 }
 
 #sign-in-error {
@@ -121,4 +153,10 @@ footer {
 .addNewBrand {
   margin-left: 20px;
   color: white;
+}
+
+.contactForm {
+  width: 95%;
+  margin: auto;
+  padding: 20px;
 }

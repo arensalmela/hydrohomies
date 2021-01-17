@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="./css/styles.css" type="text/css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: black; opacity: 0.8;">
       <a id="hydrohomies" class="navbar-brand" href="./posts.html">Hydrohomies</a>
       <button
         class="navbar-toggler"
@@ -44,52 +44,54 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="./posts.html"
-              ><i class="fas fa-home"></i
+              ><i class="fas fa-home" style="color: white"></i
               ><span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Create a Review</a>
+            <a class="nav-link"  style="color:white" href="#">Create a Review</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./suggestion.html">Suggestion Box</a>
+            <a class="nav-link" style="color:white" href="./suggestion.html">Suggestion Box</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">Logout</a>
+            <a class="nav-link" style="color:white" href="./index.html">Logout</a>
           </li>
       </div>
     </nav>
     <div>
-      <header id="welcome">Create a new Review</header>
+      <header id="welcome-home">Review some H<sub>2</sub>0!</header>
     </div>
 
     <div id="new-review" class="row">
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">New Review</h5>
+            <h5 class="card-title">Enter the information for the H<sub>2</sub>0 you want to review:</h5>
+            <br>
             <form>
-              <label for="brands">Choose a Brand:</label>
+              <label class="dropdown-labels" for="brands">Choose a Brand:</label>
 
               <select name="brand" id="brand" class="chzn-select">
                 
                 
               </select>
 
-              <label for="flavors">Choose a Flavor:</label>
+              <label class="dropdown-labels" for="flavors">Choose a Flavor:</label>
               <select name="flavor" id="flavor" class="chzn-select">
               </select>
 
-              <label for="bubbles">Bubbles?</label>
+              <label class="dropdown-labels" for="bubbles">Bubbles?</label>
               <select name="bubbles" id="bubbles" class="chzn-select">
               </select>
               
-              <label for="rating">Rating</label>
+              <label class="dropdown-labels" for="rating">Rating</label>
               <select name="rating" id="rating" class="chzn-select">
               </select>
-              
+              <br>
+              <br>
               <div class="mb-3">
-                <label class="form-label">Review Title</label>
+                <label class="form-label">Review Title:</label>
                 <input
                   type="text"
                   class="form-control"
@@ -108,12 +110,12 @@
                 ></textarea>
                 <div id="newReviewBodyErrMsg"></div>
               </div>
-              ></div>
+              </div>
               
 
-              <button id="submitBTN" type="button" class="btn btn-primary">Submit
-                <a href="./posts.html"></a>
+              <button id="submitBTN" type="button" class="btn btn-primary">Submit your Review
               </button>
+              <br>
             </form>
           </div>
         </div>

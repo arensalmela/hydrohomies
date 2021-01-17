@@ -27,4 +27,9 @@ $(document).ready(function () {
       $("#new-user-btn").attr("href", "./posts.html");
     }
   });
+
+  $(".login-first").on("click", function() {
+    const template = `<p style="color: red">Please enter a username to continue</p>`
+    $("#login-error-msg").prepend(template);
+  })
 });
