@@ -120,11 +120,11 @@ $(document).ready(function () {
       if (Rating !== "" || Rating !== null) {
         if (Rating.rating === true) {
           $("#rating").append(
-            `<option value= "${Rating.id}">Dehydrated</option>`
+            `<option value= "${Rating.rating}">Dehydrated</option>`
           );
         } else {
           $("#rating").append(
-            `<option value= "${Rating.id}">Hydrated</option>`
+            `<option value= "${Rating.rating}">Hydrated</option>`
           );
         }
       } else {
