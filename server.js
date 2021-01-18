@@ -73,7 +73,7 @@ db.sequelize.sync({ force: true }).then(function () {
     rating: false,
   }).then();
 
-  const allReviews = db.All_Reviews.create({
+  const allReviews1 = db.All_Reviews.create({
     brand: "Polar",
     carbonation: 1,
     flavor: "Cherry",
@@ -81,5 +81,15 @@ db.sequelize.sync({ force: true }).then(function () {
     body: "This is a terrible beverage",
     rating: true,
     user_name: "aren",
+  });
+
+  const allReviews2 = db.All_Reviews.create({
+    brand: "Bubly",
+    carbonation: 0,
+    flavor: "Lime",
+    title: "So great",
+    body: "I love it",
+    rating: false,
+    user_name: "mike",
   });
 });
