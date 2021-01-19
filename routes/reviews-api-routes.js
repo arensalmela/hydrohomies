@@ -17,8 +17,6 @@ module.exports = function (app) {
 
   //***save new review to allReviews table==================================
   app.post("/api/new_review", function (req, res) {
-    console.log(req.body);
-
     db.All_Reviews.create({
       brand: req.body.brand,
       flavor: req.body.flavor,
@@ -29,18 +27,18 @@ module.exports = function (app) {
       user_name: req.body.user_name,
     }).then(function (results) {
       console.log(results);
-      res.json({ message: "Great Job" });
+      res.json({ message: "Review was created successfully" });
     });
   });
 
   //***delete one post==================================
-  app.delete("/api/posts/:id", function (req, res) {
-    db.Post.destroy({
+  app.delete("/api/delete_review/:body", function (req, res) {
+    db.All_Reviews.destroy({
       where: {
-        id: req.params.id,
+        body: req.params.body,
       },
-    }).then(function (dbPost) {
-      res.json(dbPost);
+    }).then(function (dbAll_Reviews) {
+      res.json(dbAll_Reviews);
     });
   });
 
@@ -56,11 +54,3 @@ module.exports = function (app) {
   });
 };
 
-// app.post("/api/new_review", function (req, res) {
-//   const answers = req.body;
-//   const pushReview = `INSERT INTO All_Reviews (title, body, brand, carbonation, flavor, rating, user_name, createdAt, updatedAt) VALUES ("${answers.title}", "${answers.body}", "${answers.brand}", "${answers.carbonation}", "${answers.flavor}",  "${answers.rating}", "${answers.user_name}", current_timestamp(), CURRENT_TIMESTAMP);`;
-
-//   const allReviews = db.All_Reviews.create(answers).then((results) =>
-//     res.json(results)
-//   );
-// });

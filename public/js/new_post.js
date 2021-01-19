@@ -37,19 +37,26 @@ $(document).ready(function () {
     }
 
     //*body errors==========================================
-    if ($("#newReviewBody") === "") {
-      $("#newReviewTitleErrMsg").append($("<p>Please write a review</p>"));
+    if (body === "") {
+      $("#newReviewBodyErrMsg").append($("<p>Please write a review</p>"));
+      return;
     } else {
     }
 
     //*dropdown menus errors==========================================
     if (
-      $("#brand").val() === undefined ||
-      $("#flavor").val() === undefined ||
-      $("#bubbles").val() === undefined ||
-      $("#rating").val() === undefined
+      brand === undefined ||
+      brand === "Select Brand" ||
+      flavor === undefined ||
+      flavor === "Select Flavor" ||
+      bubbles === undefined ||
+      bubbles === "Select Bubbles" ||
+      rating === undefined ||
+      rating === "Select Rating"
     ) {
-      $("#dropdownErrMsg").append($("<p>Select an item from the dropdown</p>"));
+      $("#dropdownErrMsg").append(
+        $("<p>Looks like you didn't select from all the dropdowns.</p>")
+      );
       return;
     } else {
     }
@@ -64,8 +71,8 @@ $(document).ready(function () {
     });
   });
 
-  function isValid(str) {
-    return !/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(str);
+  function isValid(title) {
+    return !/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(title);
   }
 
   function hasNumber(myString) {
