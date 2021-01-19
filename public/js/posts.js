@@ -1,7 +1,7 @@
 $(document).ready(function () {
   //***AJAX request for cards==========================================
   $.ajax({ method: "GET", url: "/api/allReviews" }).done(function (response) {
-    //*** fill 10 cards
+    //*** creates up to 10 cards==================
     console.log(response);
     for (let i = 0; i < response.length; i++) {
       const reviewCard = response[i];
@@ -12,15 +12,18 @@ $(document).ready(function () {
       let carbonation = reviewCard.carbonation;
       let flavor = reviewCard.flavor;
       let user_name = reviewCard.user_name;
+      let id = reviewCard.id;
 
       $("#card").textContent = title;
+      //*** buy from amazon button==================
       const amazon =
         "https://www.amazon.com/s?k=" +
         brand +
-        "+" +
+        "+water+" +
         flavor +
         "&ref=nb_sb_noss_2";
 
+      //*** card template==================
       const template = `
       <div id="posts" class="card container">
       <div class="card-header text-uppercase"><h2>
@@ -33,7 +36,7 @@ $(document).ready(function () {
         <p class="card-text">Hey, <span class= "text-uppercase"> ${user_name}</span>, did this have bubbles? <span class="font-weight-bold" id= "bubbles"></span></p>
         <p>I rate this <span class="font-weight-bold" id= "rating"></span></p>
         <a type="button" class="btn btn-secondary" target="_blank" href=${amazon}>Buy from Amazon</a>
-        <div type="button" class="btn btn-secondary float-right">Delete Post</div>
+        <div type="button" id= "deleteBTN" class="btn btn-secondary float-right">Delete Post</div>
       </div>
   </div>
   <br>`;
@@ -43,27 +46,26 @@ $(document).ready(function () {
       if (i === 9) {
         return;
       }
-
-      //Object.entries(reviewCard).forEach((entry) => {
-      //const [key, value] = entry;
-      //console.log(key, value);
-      if (reviewCard.carbonation === true) {
+      //*** convert database boolean value into string for Bubbles==================
+      if (carbonation === true) {
         $("#bubbles").append(`<span>Yes Bubbles!</span>`);
       } else {
         $("#bubbles").append(`<span>No Bubbles!</span>`);
       }
-      //}
-      //);
-
-      //Object.entries(reviewCard).forEach((entry) => {
-      //const [key, value] = entry;
-      //console.log(key, value);
-      if (reviewCard.rating === true) {
+      //*** convert database boolean value into string for Rating==================
+      if (rating === true) {
         $("#rating").append(`<span>Dehydrated!</span>`);
       } else {
         $("#rating").append(`<span>Hydrated!</span>`);
       }
-      //});
+      //*** buy from amazon button==================
+      $("#deleteBTN").on("click", function () {
+        $.ajax({
+          method: "DELETE",
+          url: "/api/delete_review/:body" + body,
+          data: reviewCard,
+        }).done(console.log("The review has been eliminated"));
+      });
     }
   });
 });

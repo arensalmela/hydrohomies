@@ -1,2 +1,4 @@
-drop database if exists hydro_db;
-CREATE DATABASE hydro_db; 
+use hydro_db;
+select * from all_reviews;
+
+
