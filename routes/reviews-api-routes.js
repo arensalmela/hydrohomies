@@ -32,10 +32,10 @@ module.exports = function (app) {
   });
 
   //***delete one post==================================
-  app.delete("/api/delete_review/:body", function (req, res) {
+  app.delete("/api/delete_review/:id", function (req, res) {
     db.All_Reviews.destroy({
       where: {
-        body: req.params.body,
+        id: req.params.id,
       },
     }).then(function (dbAll_Reviews) {
       res.json(dbAll_Reviews);
@@ -53,4 +53,3 @@ module.exports = function (app) {
     });
   });
 };
-

@@ -12,7 +12,6 @@ $(document).ready(function () {
       let carbonation = reviewCard.carbonation;
       let flavor = reviewCard.flavor;
       let user_name = reviewCard.user_name;
-      let id = reviewCard.id;
 
       $("#card").textContent = title;
       //*** buy from amazon button==================
@@ -35,8 +34,8 @@ $(document).ready(function () {
         <h5 class="card-title text-center">${body}</h5>
         <p class="card-text">Hey, <span class= "text-uppercase"> ${user_name}</span>, did this have bubbles? <span class="font-weight-bold" id= "bubbles"></span></p>
         <p>I rate this <span class="font-weight-bold" id= "rating"></span></p>
-        <a type="button" class="btn btn-secondary" target="_blank" href=${amazon}>Buy from Amazon</a>
-        <div type="button" id= "deleteBTN" class="btn btn-secondary float-right">Delete Post</div>
+        <a type="button" class="btn btn-secondary" target="_blank" href="${amazon}">Buy from Amazon</a>
+        <button type="button" data-review-id= "${reviewCard.id}" class="deleteBTN btn btn-secondary float-right">Delete Post</button>
       </div>
   </div>
   <br>`;
@@ -58,14 +57,16 @@ $(document).ready(function () {
       } else {
         $("#rating").append(`<span>Hydrated!</span>`);
       }
-      //*** buy from amazon button==================
-      $("#deleteBTN").on("click", function () {
-        $.ajax({
-          method: "DELETE",
-          url: "/api/delete_review/:body" + body,
-          data: reviewCard,
-        }).done(console.log("The review has been eliminated"));
-      });
+      //*** delete buttons==================
     }
+  });
+  $(document).on("click", ".deleteBTN", function () {
+    let id = $(this).attr("data-review-id");
+    $.ajax({
+      method: "DELETE",
+      url: "/api/delete_review/" + id,
+    }).done((_) => {
+      window.location.reload();
+    });
   });
 });
