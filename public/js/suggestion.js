@@ -12,7 +12,18 @@ $(document).ready(function () {
       $("#typeNewBrand").attr("placeholder", "Please enter a brand");
       $("#add-brand-error").text("Please enter a brand");
     } else {
-      $(".addNewBrand").attr("href", "./posts.html");
+      $(".addNewBrand").attr("href", "./suggestion.html");
+
+      const newBrand = {
+        brand_name: typeNewBrand,
+      };
+      $.ajax({
+        method: "POST",
+        url: "/api/brands",
+        data: newBrand,
+      }).done(function (response) {
+        console.log(response);
+      });
     }
   });
 
@@ -27,6 +38,16 @@ $(document).ready(function () {
       $("#add-flavor-error").text("Please enter a flavor");
     } else {
       $(".addNewFlavor").attr("href", "./posts.html");
+      const newFlavor = {
+        flavor: addNewFlavor,
+      };
+      $.ajax({
+        method: "POST",
+        url: "/api/flavors",
+        data: newFlavor,
+      }).done(function (response) {
+        console.log(response);
+      });
     }
   });
 });

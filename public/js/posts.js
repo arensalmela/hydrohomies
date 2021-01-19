@@ -44,25 +44,26 @@ $(document).ready(function () {
         return;
       }
 
-      Object.entries(reviewCard).forEach((entry) => {
-        const [key, value] = entry;
-        console.log(key, value);
-        if (reviewCard.carbonation === true) {
-          $("#bubbles").append(`<span>Yes Bubbles!</span>`);
-        } else {
-          $("#bubbles").append(`<span>No Bubbles!</span>`);
-        }
-      });
+      //Object.entries(reviewCard).forEach((entry) => {
+      //const [key, value] = entry;
+      //console.log(key, value);
+      if (reviewCard.carbonation === true) {
+        $("#bubbles").append(`<span>Yes Bubbles!</span>`);
+      } else {
+        $("#bubbles").append(`<span>No Bubbles!</span>`);
+      }
+      //}
+      //);
 
-      Object.entries(reviewCard).forEach((entry) => {
-        const [key, value] = entry;
-        console.log(key, value);
-        if (reviewCard.rating === true) {
-          $("#rating").append(`<span>Dehydrated!</span>`);
-        } else {
-          $("#rating").append(`<span>Hydrated!</span>`);
-        }
-      });
+      //Object.entries(reviewCard).forEach((entry) => {
+      //const [key, value] = entry;
+      //console.log(key, value);
+      if (reviewCard.rating === true) {
+        $("#rating").append(`<span>Dehydrated!</span>`);
+      } else {
+        $("#rating").append(`<span>Hydrated!</span>`);
+      }
+      //});
     }
   });
 });

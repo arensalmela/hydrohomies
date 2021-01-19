@@ -31,14 +31,18 @@ module.exports = function (app) {
 
   //***add new brand==================================
   app.post("/api/brands", function (req, res) {
-    db.Brand.create(req.body).then(function (dbBrand) {
+    console.log(req.body.brand_name);
+
+    db.Brand.create({ brand_name: req.body.brand_name })
+    .then(function (dbBrand) {
       res.json(dbBrand);
     });
   });
 
   //***add new flavor==================================
   app.post("/api/flavors", function (req, res) {
-    db.Flavor.create(req.body).then(function (dbFlavor) {
+    db.Flavor.create({flavor: req.body.flavor})
+    .then(function (dbFlavor) {
       res.json(dbFlavor);
     });
   });
