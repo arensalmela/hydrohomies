@@ -1,9 +1,15 @@
 $(document).ready(function () {
+  //***clear local storage on logout==========================================
+  $("#logOutBTN").on("click", function () {
+    return localStorage.clear();
+  });
+
   //***user entry error checks==========================================
   $("#submitBTN").on("click", function () {
     $("#newReviewTitleErrMsg").html("");
     $("#newReviewBodyErrMsg").html("");
     $("#dropdownErrMsg").html("");
+
     const brand = $("#brand").val();
     const flavor = $("#flavor").val();
     const bubbles = $("#bubbles").val();
@@ -70,7 +76,7 @@ $(document).ready(function () {
       console.log(response);
     });
 
-    $(this).attr("href", "./posts.html")
+    $(this).attr("href", "./posts.html");
   });
 
   function isValid(title) {

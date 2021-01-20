@@ -1,4 +1,8 @@
 $(document).ready(function () {
+  //***clear local storage on logout==========================================
+  $("#logOutBTN").on("click", function () {
+    return localStorage.clear();
+  });
   $(".addNewBrand").on("click", function () {
     var typeNewBrand = $("#typeNewBrand").val();
     console.log("adding brand?");
