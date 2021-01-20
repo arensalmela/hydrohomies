@@ -5,7 +5,7 @@ $(document).ready(function () {
     console.log("this function");
     if (userName === "") {
       $("#username").val("");
-      $("#sign-in-error").text("Please enter a username");
+      $(".username-error").text("Please enter a username");
       $("#username").attr("style", "border: 2px solid red; border-radius: 4px");
       $("#username").attr("placeholder", "Please enter a username");
     } else {
@@ -18,7 +18,7 @@ $(document).ready(function () {
     localStorage.setItem("userName", newUser);
     console.log("this function");
     if (newUser === "") {
-      $("#new-user-error").text("Please enter a username");
+      $(".signup-error").text("Please enter a username");
       $("#new-username").attr(
         "style",
         "border: 2px solid red; border-radius: 4px"
@@ -28,8 +28,9 @@ $(document).ready(function () {
     }
   });
 
-  $(".login-first").on("click", function() {
-    const template = `<p style="color: red">Please enter a username to continue</p>`
-    $("#login-error-msg").prepend(template);
-  })
+  $(".login-first").on("click", function () {
+    console.log("working");
+    const template = `<p style="color: red">Please enter a username to continue</p>`;
+    //$(".error").prepend(template);
+  });
 });

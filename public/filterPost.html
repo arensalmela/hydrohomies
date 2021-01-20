@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="./css/styles.css" type="text/css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #008080; opacity: 0.8;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: black; opacity: 0.8;">
       <a id="hydrohomies" class="navbar-brand" href="#">Hydrohomies</a>
       <button
         class="navbar-toggler"
@@ -42,8 +42,11 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link login-first"  style="color:white" href="#">See All Reviews</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              ><i class="fas fa-home" style="color: white"></i
+              ><span class="sr-only">(current)</span></a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link"  style="color:white" href="./newPost.html">Create a Review</a>
@@ -59,7 +62,16 @@
     <div>
       <header id="welcome-home">Most Recent Hydrohomies Reviews</header>
     </div>
-    <div id = "cardInfo"></div>
+    <input
+    type="text"
+    id="filterBrand" 
+    class="form-control"
+    placeholder="Search Brands"
+    style="width:350px"
+/>
+<a id="filter-brand-btn" type="button" class="filterByBrand btn btn-primary"> Search by Brand
+</a>
+    <div id = "filtercardInfo"></div>
 
   
 	  <br>
@@ -80,19 +92,7 @@
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
   crossorigin="anonymous"
 ></script>
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
-<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen-sprite.png"></script> -->
-<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen-sprite@2x.png"></script> -->
-<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css"></script> -->
-<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css"></script> -->
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.js"></script>
-<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"></script> -->
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.proto.js"></script>
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.proto.min.js"></script>
-<script type="text/javascript">
-      $(function () {
-        $(".chzn-select").chosen();
-      });
+
 </script>
 <script src="js/posts.js"></script>
 

@@ -44,3 +44,14 @@ module.exports = function (app) {
 
 
 };
+
+
+//***filter reviews==================================
+ //app.get("/api/filterBrand", function (req, res){
+   //db.All_Reviews.findAll({
+     //where: {
+        //brand: filterBrand 
+
+     //}
+   //})
+ //})
