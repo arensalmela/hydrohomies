@@ -12,7 +12,7 @@ $(document).ready(function () {
       $("#typeNewBrand").attr("placeholder", "Please enter a brand");
       $("#add-brand-error").text("Please enter a brand");
     } else {
-      $(".addNewBrand").attr("href", "./suggestion.html");
+      $(".addNewBrand").attr("href", "./posts.html");
 
       const newBrand = {
         brand_name: typeNewBrand,

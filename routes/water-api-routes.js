@@ -48,24 +48,24 @@ module.exports = function (app) {
   });
 
   //***delete a brand==================================
-  app.delete("/api/Brands/:id", function (req, res) {
-    db.Brand.destroy({
-      where: {
-        id: req.params.id,
-      },
-    }).then(function (dbBrand) {
-      res.json(dbBrand);
-    });
-  });
+  // app.delete("/api/Brands/:id", function (req, res) {
+  //   db.Brand.destroy({
+  //     where: {
+  //       id: req.params.id,
+  //     },
+  //   }).then(function (dbBrand) {
+  //     res.json(dbBrand);
+  //   });
+  // });
 
   //***delete a flavor==================================
-  app.delete("/api/flavors/:id", function (req, res) {
-    db.Flavor.destroy({
-      where: {
-        id: req.params.id,
-      },
-    }).then(function (dbFlavor) {
-      res.json(dbFlavor);
-    });
-  });
+  // app.delete("/api/flavors/:id", function (req, res) {
+  //   db.Flavor.destroy({
+  //     where: {
+  //       id: req.params.id,
+  //     },
+  //   }).then(function (dbFlavor) {
+  //     res.json(dbFlavor);
+  //   });
+  // });
 };
