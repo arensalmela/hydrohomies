@@ -1,30 +1,33 @@
 $(document).ready(function () {
   //***AJAX request for cards==========================================
-  $.ajax({ method: "GET", url: "/api/allReviews" }).done(function (response) {
-    //*** creates up to 10 cards==================
-    console.log(response);
-    for (let i = 0; i < response.length; i++) {
-      const reviewCard = response[i];
-      let title = reviewCard.title;
-      let body = reviewCard.body;
-      let rating = reviewCard.rating;
-      let brand = reviewCard.brand;
-      let carbonation = reviewCard.carbonation;
-      let flavor = reviewCard.flavor;
-      let user_name = reviewCard.user_name;
+  callReviews();
+  function callReviews() {
+    $("#cardInfo").empty();
+    $.ajax({ method: "GET", url: "/api/allReviews" }).done(function (response) {
+      //*** creates up to 10 cards==================
+      console.log(response);
+      for (let i = 0; i < response.length; i++) {
+        const reviewCard = response[i];
+        let title = reviewCard.title;
+        let body = reviewCard.body;
+        let rating = reviewCard.rating;
+        let brand = reviewCard.brand;
+        let carbonation = reviewCard.carbonation;
+        let flavor = reviewCard.flavor;
+        let user_name = reviewCard.user_name;
 
-      $("#card").textContent = title;
-      //*** buy from amazon button==================
-      const amazon =
-        "https://www.amazon.com/s?k=" +
-        brand +
-        "+water+" +
-        flavor +
-        "&ref=nb_sb_noss_2";
+        $("#card").textContent = title;
+        //*** buy from amazon button==================
+        const amazon =
+          "https://www.amazon.com/s?k=" +
+          brand +
+          "+water+" +
+          flavor +
+          "&ref=nb_sb_noss_2";
 
-      //*** card template==================
-      const template = `
-      <div id="posts" class="card container">
+        //*** card template==================
+        const template = `
+      <div class="card container">
       <div class="card-header text-uppercase"><h2>
       <span class="float-left">${title} <span class="text-lowercase font-italic">by</span> ${user_name}</span>
       <span class="float-right">${flavor} ${brand}</span></h2>
@@ -40,33 +43,32 @@ $(document).ready(function () {
   </div>
   <br>`;
 
-      $("#cardInfo").prepend(template);
+        $("#cardInfo").prepend(template);
 
-      if (i === 9) {
-        return;
+        if (i === 9) {
+          return;
+        }
+        //*** convert database boolean value into string for Bubbles==================
+        if (carbonation === true) {
+          $("#bubbles").append(`<span>Yes Bubbles!</span>`);
+        } else {
+          $("#bubbles").append(`<span>No Bubbles!</span>`);
+        }
+        //*** convert database boolean value into string for Rating==================
+        if (rating === true) {
+          $("#rating").append(`<span>Dehydrated!</span>`);
+        } else {
+          $("#rating").append(`<span>Hydrated!</span>`);
+        }
+        //*** delete buttons==================
       }
-      //*** convert database boolean value into string for Bubbles==================
-      if (carbonation === true) {
-        $("#bubbles").append(`<span>Yes Bubbles!</span>`);
-      } else {
-        $("#bubbles").append(`<span>No Bubbles!</span>`);
-      }
-      //*** convert database boolean value into string for Rating==================
-      if (rating === true) {
-        $("#rating").append(`<span>Dehydrated!</span>`);
-      } else {
-        $("#rating").append(`<span>Hydrated!</span>`);
-      }
-      //*** delete buttons==================
-    }
-  });
+    });
+  }
   $(document).on("click", ".deleteBTN", function () {
     let id = $(this).attr("data-review-id");
     $.ajax({
       method: "DELETE",
       url: "/api/delete_review/" + id,
-    }).done((_) => {
-      window.location.reload();
-    });
+    }).then(callReviews);
   });
 });
