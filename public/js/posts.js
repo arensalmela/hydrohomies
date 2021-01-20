@@ -15,7 +15,8 @@ $(document).ready(function () {
         let carbonation = reviewCard.carbonation;
         let flavor = reviewCard.flavor;
         let user_name = reviewCard.user_name;
-
+        
+        
         $("#card").textContent = title;
         //*** buy from amazon button==================
         const amazon =
@@ -65,10 +66,14 @@ $(document).ready(function () {
     });
   }
   $(document).on("click", ".deleteBTN", function () {
-    let id = $(this).attr("data-review-id");
-    $.ajax({
-      method: "DELETE",
-      url: "/api/delete_review/" + id,
-    }).then(callReviews);
+    const id = $(this).attr("data-review-id");
+    // if (localStorage.getItem("userName") === callReviews()) {
+      $.ajax({
+        method: "DELETE",
+        url: "/api/delete_review/" + id,
+      }).then(callReviews);
+    // } else {
+    //   console.log(data-review-id);
+    // }
   });
 });
