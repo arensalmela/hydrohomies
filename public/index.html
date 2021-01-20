@@ -25,9 +25,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./css/styles.css" type="text/css" />
   </head>
-  <body id="home">
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: black; opacity: 0.8;">
-      <a id="hydrohomies" class="navbar-brand" href="#">Hydrohomies</a>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #008080; opacity: 0.8;">
+      <a id="hydrohomies" class="navbar-brand" href="#" style="opacity: 1.0">Hydrohomies</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -42,11 +42,8 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="./index.html"
-              ><i class="fas fa-home" style="color: white"></i
-              ><span class="sr-only">(current)</span></a
-            >
+          <li class="nav-item">
+            <a class="nav-link login-first"  style="color:white" href="#">See All Reviews</a>
           </li>
           <li class="nav-item">
             <a class="nav-link login-first"  style="color:white" href="#">Create a Review</a>
@@ -64,7 +61,7 @@
         Welcome to Hydrohomies: Rate and Review Your Favorite Beverages!
       </header>
     </div>
-    <div id="login-error-msg"></div>
+    <div class="error"></div>
 
     <div id="sign-in" class="row">
       <div class="col-sm-6">
@@ -82,7 +79,7 @@
                   aria-describedby="emailHelp"
                   placeholder="Username"
                 />
-                <div id="sign-in-error"> </div>
+                <div class="error username-error"> </div>
               </div>
               <a id="sign-in-btn" type="button" class="btn btn-primary submitBtn">Sign In
               </a>
@@ -105,7 +102,7 @@
                   id="new-username"
                   placeholder="Username"
                 />
-                <div id="new-user-error"> </div>
+                <div class="error signup-error"> </div>
               </div>
               <a id="new-user-btn" type="button" class="btn btn-primary newUserBtn">Create My Account
               </a>

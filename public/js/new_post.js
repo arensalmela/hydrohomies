@@ -69,7 +69,8 @@ $(document).ready(function () {
     }).done(function (response) {
       console.log(response);
     });
-    
+
+    $(this).attr("href", "./posts.html")
   });
 
   function isValid(title) {

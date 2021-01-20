@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="./css/styles.css" type="text/css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: black; opacity: 0.8;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #008080; opacity: 0.8;">
       <a id="hydrohomies" class="navbar-brand" href="./posts.html">Hydrohomies</a>
       <button
         class="navbar-toggler"
@@ -42,11 +42,8 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="./posts.html"
-              ><i class="fas fa-home" style="color: white"></i
-              ><span class="sr-only">(current)</span></a
-            >
+          <li class="nav-item">
+            <a class="nav-link login-first"  style="color:white" href="./posts.html">See All Reviews</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  style="color:white" href="#">Create a Review</a>
@@ -88,7 +85,7 @@
               <label class="dropdown-labels" for="rating">Rating</label>
               <select name="rating" id="rating" class="chzn-select">
               </select>
-              <div id="dropdownErrMsg"></div>
+              <div  class= "error" id="dropdownErrMsg"></div>
               <br>
               <br>
               <div class="mb-3">
@@ -99,7 +96,7 @@
                   id="newReviewTitle"
                   placeholder="Review Title"
                 />
-                <div id="newReviewTitleErrMsg"></div>
+                <div class= "error" id="newReviewTitleErrMsg"></div>
               </div>
               <div class="mb-3">
                 <label class="form-label">Review:</label>
@@ -109,12 +106,12 @@
                   placeholder="Review Text Here"
                   rows="3"
                 ></textarea>
-                <div id="newReviewBodyErrMsg"></div>
+                <div class= "error" id="newReviewBodyErrMsg"></div>
               </div>
               </div>
               
 
-              <a id="submitBTN" type="button" class="btn btn-primary" href="./posts.html">Submit your Review
+              <a id="submitBTN" type="button" class="btn btn-primary">Submit your Review
               </a>
               <br>
             </form>

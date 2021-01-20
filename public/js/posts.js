@@ -15,8 +15,7 @@ $(document).ready(function () {
         let carbonation = reviewCard.carbonation;
         let flavor = reviewCard.flavor;
         let user_name = reviewCard.user_name;
-        
-        
+
         $("#card").textContent = title;
         //*** buy from amazon button==================
         const amazon =
@@ -28,9 +27,9 @@ $(document).ready(function () {
 
         //*** card template==================
         const template = `
-      <div class="card container">
+      <div class="card container" style="padding: 0px">
       <div class="card-header text-uppercase"><h2>
-      <span class="float-left">${title} <span class="text-lowercase font-italic">by</span> ${user_name}</span>
+      <span class="float-left"  >${title} <span class="text-lowercase font-italic">by</span> ${user_name}</span>
       <span class="float-right">${flavor} ${brand}</span></h2>
       </div>
       
@@ -38,9 +37,19 @@ $(document).ready(function () {
         <h5 class="card-title text-center">${body}</h5>
         <p class="card-text">Hey, <span class= "text-uppercase"> ${user_name}</span>, did this have bubbles? <span class="font-weight-bold" id= "bubbles"></span></p>
         <p>I rate this <span class="font-weight-bold" id= "rating"></span></p>
-        <a type="button" class="btn btn-secondary" target="_blank" href="${amazon}">Buy from Amazon</a>
-        <button type="button" data-review-id= "${reviewCard.id}" class="deleteBTN btn btn-secondary float-right">Delete Post</button>
-      </div>
+        <a type="button" class="btn btn-secondary amazonBTN" target="_blank" href="${amazon}">Buy from Amazon</a>
+        <span>
+            ${(() => {
+              if (
+                user_name !== localStorage.getItem("userName").toLowerCase()
+              ) {
+                return "";
+              } else {
+                return `<button value ="${user_name}" type="button" data-review-id= "${reviewCard.id}" class=" deleteBTN btn btn-secondary float-right">Delete Post</button>`;
+              }
+            })()}
+        </span>
+        </div>
   </div>
   <br>`;
 
@@ -67,13 +76,14 @@ $(document).ready(function () {
   }
   $(document).on("click", ".deleteBTN", function () {
     const id = $(this).attr("data-review-id");
-    // if (localStorage.getItem("userName") === callReviews()) {
+    console.log(this);
+    if (localStorage.getItem("userName").toLowerCase() === $(this).val()) {
       $.ajax({
         method: "DELETE",
         url: "/api/delete_review/" + id,
       }).then(callReviews);
-    // } else {
-    //   console.log(data-review-id);
-    // }
+    } else {
+      console.log($(this).val());
+    }
   });
 });

@@ -1,7 +1,7 @@
 #hydrohomies {
   font-family: "Lobster Two", cursive;
   font-size: 34px;
-  color: teal;
+  color:#c83f49;
 }
 
 #sign-in {
@@ -28,7 +28,7 @@
 #welcome-home {
   font-family: "Lobster Two", cursive;
   font-size: 40px;
-  color:black;
+  color: black;
   margin: auto;
   text-align: center;
 }
@@ -38,15 +38,10 @@
 }
 
 body {
-  background-image: url(/assets/background\ 2.jpg);
-  background-size: cover;
+  background-image: url(/assets/strawberrySplash.jpeg);
   background-repeat: no-repeat;
-}
+  background-size: cover;
 
-#home {
-  background-image: url(/assets/gif-test-2.gif);
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 #review-row {
@@ -65,7 +60,7 @@ footer {
   width: 100%;
   color: white;
   text-align: center;
-  background-color:black;
+  background-color: #008080;
   opacity: 0.8;
   padding: 10px;
   position: fixed;
@@ -104,20 +99,16 @@ footer {
   padding-left: 30px;
 }
 
-#sign-in-error {
+.error {
   color: red;
 }
 
-#new-user-error {
-  color: red;
+.deleteBTN:hover {
+  background-color: red;
 }
 
-#add-brand-error {
-  color: red;
-}
-
-#add-flavor-error {
-  color: red;
+.amazonBTN:hover {
+  background-color: green;
 }
 
 ::-webkit-scrollbar {
