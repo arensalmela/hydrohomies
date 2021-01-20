@@ -1,10 +1,15 @@
 $(document).ready(function () {
+  //***clear local storage on logout==========================================
+  $("#logOutBTN").on("click", function () {
+    return localStorage.clear();
+  });
+
   //***AJAX request for cards==========================================
   callReviews();
   function callReviews() {
     $("#cardInfo").empty();
     $.ajax({ method: "GET", url: "/api/allReviews" }).done(function (response) {
-      //*** creates up to 10 cards==================
+      //*** creates unlimited cards==================
       console.log(response);
       for (let i = 0; i < response.length; i++) {
         const reviewCard = response[i];
@@ -55,9 +60,10 @@ $(document).ready(function () {
 
         $("#cardInfo").prepend(template);
 
-        if (i === 9) {
-          return;
-        }
+        //*** uncomment this code if you would like only 10 cards==================
+        // if (i === 9) {
+        //   return;
+        // }
         //*** convert database boolean value into string for Bubbles==================
         if (carbonation === true) {
           $("#bubbles").append(`<span>Yes Bubbles!</span>`);
@@ -70,10 +76,10 @@ $(document).ready(function () {
         } else {
           $("#rating").append(`<span>Hydrated!</span>`);
         }
-        //*** delete buttons==================
       }
     });
   }
+  //*** delete buttons===================================
   $(document).on("click", ".deleteBTN", function () {
     const id = $(this).attr("data-review-id");
     console.log(this);

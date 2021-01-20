@@ -1,7 +1,7 @@
 #hydrohomies {
   font-family: "Lobster Two", cursive;
   font-size: 34px;
-  color:#c83f49;
+  color: #c83f49;
 }
 
 #sign-in {
@@ -41,7 +41,7 @@ body {
   background-image: url(/assets/strawberrySplash.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
-
+  background-attachment: fixed;
 }
 
 #review-row {
@@ -112,6 +112,10 @@ footer {
 }
 
 ::-webkit-scrollbar {
+  display: none;
+}
+
+/* ::-webkit-scrollbar {
   width: 8px;
   height: 3px;
 }
@@ -134,7 +138,7 @@ footer {
 }
 ::-webkit-resizer {
   background-color: #666;
-}
+} */
 
 .newBrandRow,
 .newFlavorRow {
