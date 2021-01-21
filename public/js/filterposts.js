@@ -1,46 +1,14 @@
-//***code for filter by append url protocol option*/=======================
-const get_params_from_query = (url) => {
-  let params = new URLSearchParams(url.search);
-  let result = params.entries();
-  let out = {};
-
-  for (const [key, value] of params.entries()) {
-    out[key] = value;
-  }
-  return out;
-};
-//***end code for filter by append url protocol option*/=======================
-
 $(document).ready(function () {
   //***clear local storage on logout==========================================
   $("#logOutBTN").on("click", function () {
     return localStorage.clear();
   });
 
-  //***save dropdown values on apply filter btn click=====================
-  $("#filtersBTN").on("click", function () {
-    let brandVal = $("#dropDownBrand").val();
-    var bubblesVal = $("#dropDownBubbles").val();
-    var ratingVal = $("#dropDownRating").val();
-    localStorage.setItem("brandVal", brandVal);
-    localStorage.setItem("bubblesVal", bubblesVal);
-    localStorage.setItem("ratingVal", ratingVal);
-  });
-
   //***AJAX request for cards==========================================
   callReviews();
   function callReviews() {
     $("#cardInfo").empty();
-    //***code for filter by append url protocol option*/=======================
-    let params = get_params_from_query(window.location);
-    //***end code for filter by append url protocol option*/=======================
     $.ajax({ method: "GET", url: "/api/allReviews" }).done(function (response) {
-      //***code for filter by append url protocol option*/=======================
-      let results = Object.keys(params).filter(
-        (key) => response[key] === params[key]
-      );
-      //***end code for filter by append url protocol option*/=======================
-      console.log(results);
       //*** creates unlimited cards==================
       console.log(response);
       for (let i = 0; i < response.length; i++) {
@@ -52,6 +20,11 @@ $(document).ready(function () {
         let carbonation = reviewCard.carbonation;
         let flavor = reviewCard.flavor;
         let user_name = reviewCard.user_name;
+
+        // //***how do I use local storage values to filter this card list=====================
+        // localStorage.getItem("brandVal", brandVal);
+        // localStorage.getItem("bubblesVal", bubblesVal);
+        // localStorage.getItem("ratingVal", ratingVal);
 
         $("#card").textContent = title;
         //*** buy from amazon button==================
@@ -126,10 +99,10 @@ $(document).ready(function () {
   });
   //***AJAX requests for dropdown menus==========================================
   $.ajax({ method: "GET", url: "/api/brands" }).done((result) => {
-    $("#dropDownBrand").append(`<option selected>All Brands</option>`);
+    $("#brand").append(`<option selected>All Brands</option>`);
     result.forEach((brand) => {
       if (brand !== "" || brand !== null) {
-        $("#dropDownBrand").append(
+        $("#brand").append(
           `<option value= "${brand.brand_name}">${brand.brand_name}</option>`
         );
       } else {
@@ -139,17 +112,13 @@ $(document).ready(function () {
   });
 
   $.ajax({ method: "GET", url: "/api/bubbles" }).done((result) => {
-    $("#dropDownBubbles").append(`<option selected>All Bubbles</option>`);
+    $("#bubbles").append(`<option selected>All Bubbles</option>`);
     result.forEach((Bubbles) => {
       if (Bubbles !== "" || Bubbles !== null) {
         if (Bubbles.carbonation === true) {
-          $("#dropDownBubbles").append(
-            `<option value= "true">Yes Bubbles!</option>`
-          );
+          $("#bubbles").append(`<option value= "true">Yes Bubbles!</option>`);
         } else {
-          $("#dropDownBubbles").append(
-            `<option value= "false">No Bubbles!</option>`
-          );
+          $("#bubbles").append(`<option value= "false">No Bubbles!</option>`);
         }
       } else {
       }
@@ -158,15 +127,15 @@ $(document).ready(function () {
   });
 
   $.ajax({ method: "GET", url: "/api/rating" }).done((result) => {
-    $("#dropDownRating").append(`<option selected>All Ratings</option>`);
+    $("#rating").append(`<option selected>All Ratings</option>`);
     result.forEach((Rating) => {
       if (Rating !== "" || Rating !== null) {
         if (Rating.rating === true) {
-          $("#dropDownRating").append(
+          $("#rating").append(
             `<option value= "${Rating.rating}">Dehydrated</option>`
           );
         } else {
-          $("#dropDownRating").append(
+          $("#rating").append(
             `<option value= "${Rating.rating}">Hydrated</option>`
           );
         }

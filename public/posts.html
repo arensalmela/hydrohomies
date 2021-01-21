@@ -59,9 +59,37 @@
     <div>
       <header id="welcome-home">Most Recent Hydrohomies Reviews</header>
     </div>
-    <div id = "cardInfo"></div>
+    <br>
 
-  
+
+
+
+
+<!-- filter option card -->
+    <div class="card container text-white bg-secondary mb-3" style="padding: 0px">
+      <div class="card-header text-uppercase"><h2>
+      <span class="float-left"  >Filter Options</span>
+      </div>
+      <div class="card-body">
+      <!-- Filter brand dropdown -->
+      <label class="dropdown-labels" for="brands">Filter by Brand:</label>
+      <select name="brand" id="dropDownBrand" class="chzn-select"></select>
+      <!-- Filter bubbles dropdown -->
+      <label class="dropdown-labels" for="bubbles">Filter by Bubbles</label>
+      <select name="bubbles" id="dropDownBubbles" class="chzn-select">
+      </select>
+      <!-- Filter rating dropdown -->
+      <label class="dropdown-labels" for="rating">Filter by Rating</label>
+      <select name="rating" id="dropDownRating" class="chzn-select">
+      </select>
+      <span><a id="filtersBTN" type="button" href="./filterPost.html" class="btn btn-primary float-right">Apply Filters
+      </a></span>
+      
+        </div>
+  </div>
+  <br>
+<!-- //================================================= -->
+<div id = "cardInfo"></div>
 	  <br>
 
     <footer class="mt-3">
@@ -89,11 +117,11 @@
 <!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"></script> -->
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.proto.js"></script>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.proto.min.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
       $(function () {
         $(".chzn-select").chosen();
       });
-</script>
+</script> -->
 <script src="js/posts.js"></script>
 
 <!-- Custom Script -->

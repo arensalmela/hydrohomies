@@ -123,7 +123,7 @@ db.sequelize.sync({ force: true }).then(function () {
     body:
       "That imposter is crazy. The Mango flavor pairs nicely with succuss and love, two things the other Ben has obviously never experienced. I have no opinion on the crocs matter, but I do hope the FAKE BEN finds happiness.",
     rating: false,
-    user_name: "therealben",
+    user_name: "the_real_ben",
   });
 
   const allReviews7 = db.All_Reviews.create({
@@ -175,7 +175,7 @@ db.sequelize.sync({ force: true }).then(function () {
     carbonation: 1,
     flavor: "Cherry",
     title: "This sucks",
-    body: "I am here again to day that I am not happy.",
+    body: "I am here again to say that I am not happy!",
     rating: true,
     user_name: "aren",
   });
