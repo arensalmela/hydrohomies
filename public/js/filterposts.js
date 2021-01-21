@@ -21,11 +21,6 @@ $(document).ready(function () {
         let flavor = reviewCard.flavor;
         let user_name = reviewCard.user_name;
 
-        // //***how do I use local storage values to filter this card list=====================
-        // localStorage.getItem("brandVal", brandVal);
-        // localStorage.getItem("bubblesVal", bubblesVal);
-        // localStorage.getItem("ratingVal", ratingVal);
-
         $("#card").textContent = title;
         //*** buy from amazon button==================
         const amazon =

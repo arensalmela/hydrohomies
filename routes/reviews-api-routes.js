@@ -8,6 +8,13 @@ module.exports = function (app) {
     });
   });
 
+  //***save new filtered post==================================
+  app.post("/api/posts", function (req, res) {
+    db.All_Reviews.findAll({}).then(function (dbAll_Reviews) {
+      res.json(dbAll_Reviews);
+    });
+  });
+
   //***save new post==================================
   app.post("/api/posts", function (req, res) {
     db.Post.create(req.body).then(function (dbPost) {
@@ -41,17 +48,14 @@ module.exports = function (app) {
       res.json(dbAll_Reviews);
     });
   });
-
-
 };
 
-
 //***filter reviews==================================
- //app.get("/api/filterBrand", function (req, res){
-   //db.All_Reviews.findAll({
-     //where: {
-        //brand: filterBrand 
+//app.get("/api/filterBrand", function (req, res){
+//db.All_Reviews.findAll({
+//where: {
+//brand: filterBrand
 
-     //}
-   //})
- //})
+//}
+//})
+//})
