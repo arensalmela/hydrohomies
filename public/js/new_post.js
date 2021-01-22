@@ -6,9 +6,9 @@ $(document).ready(function () {
 
   //***user entry error checks==========================================
   $("#submitBTN").on("click", function () {
-    const loadSpinner = $("a").click(function () {
+    function loadSpinner() {
       $("#overlay").fadeIn().delay(2000).fadeOut();
-    });
+    }
 
     $("#newReviewTitleErrMsg").html("");
     $("#newReviewBodyErrMsg").html("");
