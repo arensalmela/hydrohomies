@@ -1,10 +1,5 @@
 $(document).ready(function () {
-  $("a").click(function () {
-    $("#overlay").fadeIn().delay(2000).fadeOut();
-  });
-
-  $("#sign-in-btn").on("click", function () {
-    $("#overlay").fadeIn().delay(100).fadeout();
+    $("#sign-in-btn").on("click", function () {
     var userName = $("#username").val();
     localStorage.setItem("userName", userName);
     console.log("this function");
@@ -33,9 +28,6 @@ $(document).ready(function () {
     }
   });
 
-  $(".login-first").on("click", function () {
-    console.log("working");
-    const template = `<p style="color: red">Please enter a username to continue</p>`;
-    //$(".error").prepend(template);
-  });
+  
 });
+

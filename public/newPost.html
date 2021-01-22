@@ -59,66 +59,69 @@
     <div>
       <header id="welcome-home">Tell us what you think!!</header>
     </div>
-
-    <div id="new-review" class="row">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Enter the information for the beverage you want to review:</h5>
-            <br>
-            <form>
-              <label class="dropdown-labels" for="brands">Choose a Brand:</label>
-
-              <select name="brand" id="brand" class="chzn-select">
-                
-                
-              </select>
-
-              <label class="dropdown-labels" for="flavors">Choose a Flavor:</label>
-              <select name="flavor" id="flavor" class="chzn-select">
-              </select>
-
-              <label class="dropdown-labels" for="bubbles">Bubbles?</label>
-              <select name="bubbles" id="bubbles" class="chzn-select">
-              </select>
-              
-              <label class="dropdown-labels" for="rating">Rating</label>
-              <select name="rating" id="rating" class="chzn-select">
-              </select>
-              <div  class= "error" id="dropdownErrMsg"></div>
-              <br>
-              <br>
-              <div class="mb-3">
-                <label class="form-label">Review Title:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="newReviewTitle"
-                  placeholder="Review Title"
-                />
-                <div class= "error" id="newReviewTitleErrMsg"></div>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Review:</label>
-                <textarea
-                  class="form-control"
-                  id="newReviewBody"
-                  placeholder="Review Text Here"
-                  rows="3"
-                ></textarea>
-                <div class= "error" id="newReviewBodyErrMsg"></div>
-              </div>
-              </div>
-              
-
-              <a id="submitBTN" type="button" class="btn btn-primary">Submit your Review
-              </a>
-              <br>
-            </form>
-          </div>
-        </div>
+    <div class="card container text-white bg-secondary mb-3" style="padding: 0px">
+      <div class="card-header text-uppercase"><h3>
+      <span class="float-left">Enter the information for the beverage you want to review:</span></h3>
       </div>
-    </div>
+      <div class="card-body">
+        <form>
+          <label class="dropdown-labels" for="brands">Choose a Brand:</label>
+
+          <select name="brand" id="brand" class="chzn-select">
+            
+            
+          </select>
+
+          <label class="dropdown-labels" for="flavors">Choose a Flavor:</label>
+          <select name="flavor" id="flavor" class="chzn-select">
+          </select>
+
+          <label class="dropdown-labels" for="bubbles">Bubbles?</label>
+          <select name="bubbles" id="bubbles" class="chzn-select">
+          </select>
+          
+          <label class="dropdown-labels" for="rating">Rating</label>
+          <select name="rating" id="rating" class="chzn-select">
+          </select>
+          <div  class= "error" id="dropdownErrMsg"></div>
+
+          <div class="mb-3">
+            <label class="form-label">Review Title:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="newReviewTitle"
+              placeholder="Review Title"
+            />
+            <div class= "error" id="newReviewTitleErrMsg"></div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Review:</label>
+            <textarea
+              class="form-control"
+              id="newReviewBody"
+              placeholder="Review Text Here"
+              rows="3"
+            ></textarea>
+            <div class= "error" id="newReviewBodyErrMsg"></div>
+          </div>
+          </div>
+                    <a id="submitBTN" type="button" class="btn btn-primary float-right">Submit your Review
+          </a>
+          <br>
+        </form>
+
+      
+        </div>
+  </div>
+
+
+          <div id="overlay" style="display:none;">
+            <div class="spinner">
+              <br>
+            </div>
+            Loading....
+          </div>
 
     <footer class="mt-3">
       <p>&copy; Hydrohomies of Bootcamp</p>

@@ -46,7 +46,7 @@ db.sequelize.sync({ force: true }).then(function () {
   }).then();
 
   const brand2 = db.Brand.create({
-    brand_name: "Bubby",
+    brand_name: "Bubly",
   }).then();
 
   const brand3 = db.Brand.create({
@@ -66,16 +66,16 @@ db.sequelize.sync({ force: true }).then(function () {
   }).then();
 
   const rating1 = db.Rating.create({
-    rating: false,
+    rating: true,
   }).then();
 
   const rating2 = db.Rating.create({
-    rating: true,
+    rating: false,
   }).then();
 
   const allReviews1 = db.All_Reviews.create({
     brand: "Polar",
-    bubbles: 1,
+    bubbles: true,
     flavor: "Cherry",
     title: "This sucks",
     body: "This is a terrible beverage",
@@ -85,7 +85,7 @@ db.sequelize.sync({ force: true }).then(function () {
 
   const allReviews2 = db.All_Reviews.create({
     brand: "Bubly",
-    bubbles: 0,
+    bubbles: false,
     flavor: "Lime",
     title: "So great",
     body: "I love it",
@@ -95,7 +95,7 @@ db.sequelize.sync({ force: true }).then(function () {
 
   const allReviews4 = db.All_Reviews.create({
     brand: "La Croix",
-    bubbles: 1,
+    bubbles: true,
     flavor: "Peach",
     title: "Wow this is good",
     body:
@@ -106,7 +106,7 @@ db.sequelize.sync({ force: true }).then(function () {
 
   const allReviews5 = db.All_Reviews.create({
     brand: "La Croix",
-    bubbles: 1,
+    bubbles: true,
     flavor: "Mango",
     title: "No Mango Please",
     body:
@@ -117,7 +117,7 @@ db.sequelize.sync({ force: true }).then(function () {
 
   const allReviews6 = db.All_Reviews.create({
     brand: "La Croix",
-    bubbles: 1,
+    bubbles: true,
     flavor: "Mango",
     title: "No Mango Please",
     body:
@@ -128,7 +128,7 @@ db.sequelize.sync({ force: true }).then(function () {
 
   const allReviews7 = db.All_Reviews.create({
     brand: "Bubly",
-    bubbles: 0,
+    bubbles: false,
     flavor: "Peach",
     title: "Back Again",
     body:
@@ -139,7 +139,7 @@ db.sequelize.sync({ force: true }).then(function () {
 
   const allReviews8 = db.All_Reviews.create({
     brand: "Polar",
-    bubbles: 0,
+    bubbles: false,
     flavor: "Peach",
     title: "Gross",
     body:
@@ -150,7 +150,7 @@ db.sequelize.sync({ force: true }).then(function () {
 
   const allReviews9 = db.All_Reviews.create({
     brand: "Polar",
-    bubbles: 1,
+    bubbles: true,
     flavor: "Mango",
     title: "Meh",
     body:
@@ -161,7 +161,7 @@ db.sequelize.sync({ force: true }).then(function () {
 
   const allReviews10 = db.All_Reviews.create({
     brand: "Bubly",
-    bubbles: 0,
+    bubbles: false,
     flavor: "Mango",
     title: "Flat",
     body:
@@ -172,7 +172,7 @@ db.sequelize.sync({ force: true }).then(function () {
 
   const allReviews11 = db.All_Reviews.create({
     brand: "Polar",
-    bubbles: 1,
+    bubbles: true,
     flavor: "Cherry",
     title: "This sucks",
     body: "I am here again to say that I am not happy!",

@@ -6,7 +6,6 @@ $(document).ready(function () {
 
   //***save dropdown values on apply filter btn click=====================
   $("#filtersBTN").on("click", function () {
-    
     let brandVal = $("#dropDownBrand option:selected").val();
     let bubblesVal = $("#dropDownBubbles option:selected").val();
     let ratingVal = $("#dropDownRating option:selected").val();
@@ -17,7 +16,7 @@ $(document).ready(function () {
     filterOptions = {
       brandVal,
       bubblesVal,
-      ratingVal
+      ratingVal,
     };
     $.ajax({
       method: "POST",
@@ -53,19 +52,22 @@ $(document).ready(function () {
       //*** card template==================
       const template = `
     <div class="card container" style="padding: 0px">
-    <div class="card-header text-uppercase"><h2>
+    <div class="card text-white bg-secondary mb-3 card-header text-uppercase"><h2>
     <span class="float-left"  >${title} <span class="text-lowercase font-italic">by</span> ${user_name}</span>
     <span class="float-right">${flavor} ${brand}</span></h2>
     </div>
     
     <div class="card-body">
-      <h5 class="card-title text-center">${body}</h5>
+      <h5 class="card-title text-center">"${body}" </h5>
       <p class="card-text">Hey, <span class= "text-uppercase"> ${user_name}</span>, did this have bubbles? <span class="font-weight-bold" id= "bubbles"></span></p>
       <p>I rate this <span class="font-weight-bold" id= "rating"></span></p>
       <a type="button" class="btn btn-secondary amazonBTN" target="_blank" href="${amazon}">Buy from Amazon</a>
       <span>
           ${(() => {
-            if (user_name.toLowerCase() !== localStorage.getItem("userName").toLowerCase()) {
+            if (
+              user_name.toLowerCase() !==
+              localStorage.getItem("userName").toLowerCase()
+            ) {
               return "";
             } else {
               return `<button value ="${user_name}" type="button" data-review-id= "${reviewCard.id}" class=" deleteBTN btn btn-secondary float-right">Delete Post</button>`;
@@ -100,8 +102,6 @@ $(document).ready(function () {
   //***AJAX request for cards==========================================
   callReviews();
   function callReviews() {
-    
-
     $.ajax({ method: "GET", url: "/api/allReviews" }).done(function (response) {
       createCards(response);
     });
@@ -135,7 +135,7 @@ $(document).ready(function () {
 
   $.ajax({ method: "GET", url: "/api/bubbles" }).done((result) => {
     $("#dropDownBubbles").append(`<option selected></option>`);
-    console.log(result)
+    console.log(result);
     result.forEach((bubbles) => {
       if (bubbles !== "" || bubbles !== null) {
         if (bubbles.bubbles === true) {
@@ -159,11 +159,11 @@ $(document).ready(function () {
       if (Rating !== "" || Rating !== null) {
         if (Rating.rating === true) {
           $("#dropDownRating").append(
-            `<option value= "${Rating.rating}">Dehydrated</option>`
+            `<option value= "${Rating.rating}">Hydrated</option>`
           );
         } else {
           $("#dropDownRating").append(
-            `<option value= "${Rating.rating}">Hydrated</option>`
+            `<option value= "${Rating.rating}">Dehydrated</option>`
           );
         }
       } else {

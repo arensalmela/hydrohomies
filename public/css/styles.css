@@ -196,3 +196,7 @@ footer {
     transform: rotate(360deg);
   }
 }
+
+.card-title {
+  font-style: italic;
+}
