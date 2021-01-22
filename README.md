@@ -2,9 +2,8 @@
 
 Utilized https://github.com/harvesthq/chosen as a new technology.
 
-  Deployed Site Link - > 
+Deployed Site Link - > https://hydro-homies.herokuapp.com/index.html
 
-  Video Walk through Link -> 
 
 ## Table of Contents: 
 - [Project: Hydrohomies](#project-hydrohomies)
@@ -48,8 +47,14 @@ James Know (Jknox031)
 Michael Rudolph (ReindeerCode)
 
 ## Images:
-![Project Screenshot](./imagePathHere.png)
+![Project Screenshot](./public/assets/sign_in.png)
 
-![Project Screenshot](./imagePathHere.png)
+![Project Screenshot](./public/assets/reviews.png)
 
-![Project Screenshot](./imagePathHere.png)
+![Project Screenshot](./public/assets/create_review.png)
+
+![Project Screenshot](./public/assets/delete_review.png)
+
+![Project Screenshot](./public/assets/edit.png)
+
+![Project Screenshot](./public/assets/edit.png)
