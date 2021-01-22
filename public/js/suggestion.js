@@ -78,7 +78,4 @@ $(document).ready(function () {
       url: "/api/flavors/" + id,
     }).then(callReviews);
   });
-
-
-
 });
