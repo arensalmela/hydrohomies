@@ -110,7 +110,10 @@ $(document).ready(function () {
   $(document).on("click", ".deleteBTN", function () {
     const id = $(this).attr("data-review-id");
     console.log(this);
-    if (localStorage.getItem("userName").toLowerCase() === $(this).val()) {
+    if (
+      localStorage.getItem("userName").toLowerCase() ===
+      $(this).val().toLowerCase()
+    ) {
       $.ajax({
         method: "DELETE",
         url: "/api/delete_review/" + id,
