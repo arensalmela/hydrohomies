@@ -1,5 +1,10 @@
 $(document).ready(function () {
+  $("a").click(function () {
+    $("#overlay").fadeIn().delay(2000).fadeOut();
+  });
+
   $("#sign-in-btn").on("click", function () {
+    $("#overlay").fadeIn().delay(100).fadeout();
     var userName = $("#username").val();
     localStorage.setItem("userName", userName);
     console.log("this function");

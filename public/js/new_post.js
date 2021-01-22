@@ -116,9 +116,10 @@ $(document).ready(function () {
 
   $.ajax({ method: "GET", url: "/api/bubbles" }).done((result) => {
     $("#bubbles").append(`<option selected>Select Bubbles</option>`);
-    result.forEach((Bubbles) => {
-      if (Bubbles !== "" || Bubbles !== null) {
-        if (Bubbles.carbonation === true) {
+    console.log(result)
+    result.forEach((bubbles) => {
+      if (bubbles !== "" || bubbles !== null) {
+        if (bubbles.bubbles === true) {
           $("#bubbles").append(`<option value= "true">Yes Bubbles!</option>`);
         } else {
           $("#bubbles").append(`<option value= "false">No Bubbles!</option>`);
@@ -135,11 +136,11 @@ $(document).ready(function () {
       if (Rating !== "" || Rating !== null) {
         if (Rating.rating === true) {
           $("#rating").append(
-            `<option value= "${Rating.rating}">Dehydrated</option>`
+            `<option value= "${Rating.rating}">Hydrated</option>`
           );
         } else {
           $("#rating").append(
-            `<option value= "${Rating.rating}">Hydrated</option>`
+            `<option value= "${Rating.rating}">Dehydrated</option>`
           );
         }
       } else {

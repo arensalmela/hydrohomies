@@ -2,7 +2,7 @@ module.exports = function (sequelize, DataTypes) {
   const Bubbles = sequelize.define(
     "Bubbles",
     {
-      carbonation: {
+      bubbles: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: false,
