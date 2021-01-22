@@ -6,21 +6,22 @@ $(document).ready(function () {
 
   //***save dropdown values on apply filter btn click=====================
   $("#filtersBTN").on("click", function () {
-    let brandVal = $("#dropDownBrand").val();
-    let bubblesVal = $("#dropDownBubbles").val();
-    let ratingVal = $("#dropDownRating").val();
+    
+    let brandVal = $("#dropDownBrand option:selected").val();
+    let bubblesVal = $("#dropDownBubbles option:selected").val();
+    let ratingVal = $("#dropDownRating option:selected").val();
     localStorage.setItem("brandVal", brandVal);
     localStorage.setItem("bubblesVal", bubblesVal);
     localStorage.setItem("ratingVal", ratingVal);
 
     filterOptions = {
-      brandVal: $("#dropDownBrand").val(),
-      bubblesVal: $("#dropDownBubbles").val(),
-      ratingVal: $("#dropDownRating").val(),
+      brandVal,
+      bubblesVal,
+      ratingVal
     };
     $.ajax({
       method: "POST",
-      url: "/api/allReviews",
+      url: "/api/filtered",
       data: filterOptions,
     }).done(function (response) {
       createCards(response);
@@ -29,13 +30,14 @@ $(document).ready(function () {
 
   //*** creates unlimited cards==================
   function createCards(response) {
+    $("#cardInfo").empty();
     for (let i = 0; i < response.length; i++) {
       const reviewCard = response[i];
       let title = reviewCard.title;
       let body = reviewCard.body;
       let rating = reviewCard.rating;
       let brand = reviewCard.brand;
-      let carbonation = reviewCard.carbonation;
+      let bubbles = reviewCard.bubbles;
       let flavor = reviewCard.flavor;
       let user_name = reviewCard.user_name;
 
@@ -63,7 +65,7 @@ $(document).ready(function () {
       <a type="button" class="btn btn-secondary amazonBTN" target="_blank" href="${amazon}">Buy from Amazon</a>
       <span>
           ${(() => {
-            if (user_name !== localStorage.getItem("userName").toLowerCase()) {
+            if (user_name.toLowerCase() !== localStorage.getItem("userName").toLowerCase()) {
               return "";
             } else {
               return `<button value ="${user_name}" type="button" data-review-id= "${reviewCard.id}" class=" deleteBTN btn btn-secondary float-right">Delete Post</button>`;
@@ -81,16 +83,16 @@ $(document).ready(function () {
       //   return;
       // }
       //*** convert database boolean value into string for Bubbles==================
-      if (carbonation === true) {
+      if (bubbles === true) {
         $("#bubbles").append(`<span>Yes Bubbles!</span>`);
       } else {
         $("#bubbles").append(`<span>No Bubbles!</span>`);
       }
       //*** convert database boolean value into string for Rating==================
       if (rating === true) {
-        $("#rating").append(`<span>Dehydrated!</span>`);
-      } else {
         $("#rating").append(`<span>Hydrated!</span>`);
+      } else {
+        $("#rating").append(`<span>Dehydrated!</span>`);
       }
     }
   }
@@ -98,7 +100,7 @@ $(document).ready(function () {
   //***AJAX request for cards==========================================
   callReviews();
   function callReviews() {
-    $("#cardInfo").empty();
+    
 
     $.ajax({ method: "GET", url: "/api/allReviews" }).done(function (response) {
       createCards(response);
@@ -133,9 +135,10 @@ $(document).ready(function () {
 
   $.ajax({ method: "GET", url: "/api/bubbles" }).done((result) => {
     $("#dropDownBubbles").append(`<option selected></option>`);
-    result.forEach((Bubbles) => {
-      if (Bubbles !== "" || Bubbles !== null) {
-        if (Bubbles.carbonation === true) {
+    console.log(result)
+    result.forEach((bubbles) => {
+      if (bubbles !== "" || bubbles !== null) {
+        if (bubbles.bubbles === true) {
           $("#dropDownBubbles").append(
             `<option value= "true">Yes Bubbles!</option>`
           );

@@ -1,4 +1,6 @@
 let db = require("../models");
+let sequelize = require("sequelize");
+const Op = sequelize.Op;
 
 module.exports = function (app) {
   //***find all reviews==================================
@@ -9,8 +11,25 @@ module.exports = function (app) {
   });
 
   //***save new filtered post==================================
-  app.post("/api/posts", function (req, res) {
-    db.All_Reviews.findAll({}).then(function (dbAll_Reviews) {
+  app.post("/api/filtered", function (req, res) {
+    const filterOption = [];
+    if (req.body.brandVal) {
+      filterOption.push({ brand: req.body.brandVal  });
+    }
+    if (req.body.bubblesVal) {
+      filterOption.push({ bubbles: req.body.bubblesVal === "true" ? true : false  });
+    }
+
+    if (req.body.ratingVal) {
+      filterOption.push({
+        rating: req.body.ratingVal === "true" ? true : false,
+      });
+    }
+    db.All_Reviews.findAll({
+      where: {
+        [Op.and]: filterOption,
+      },
+    }).then(function (dbAll_Reviews) {
       res.json(dbAll_Reviews);
     });
   });
@@ -49,13 +68,3 @@ module.exports = function (app) {
     });
   });
 };
-
-//***filter reviews==================================
-//app.get("/api/filterBrand", function (req, res){
-//db.All_Reviews.findAll({
-//where: {
-//brand: filterBrand
-
-//}
-//})
-//})

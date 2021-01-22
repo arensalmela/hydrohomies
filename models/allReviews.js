@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes) {
         //   len: [1],
         // },
       },
-      carbonation: {
+      bubbles: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: false,

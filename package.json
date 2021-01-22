@@ -24,7 +24,7 @@
     "express": "^4.17.1",
     "inquirer": "^7.3.3",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.4.0"
   },
   "devDependencies": {
     "sequelize-cli": "^6.2.0"

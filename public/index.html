@@ -26,95 +26,105 @@
     <link rel="stylesheet" href="./css/styles.css" type="text/css" />
   </head>
   <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #008080; opacity: 0.8;">
-      <div id="hydrohomies" class="navbar-brand" href="#" style="opacity: 1.0">Hydrohomies</div>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <!-- <li class="nav-item addMore">
-            <a class="nav-link login-first" title="Enter a Username" style="color:white" href="#">See All Reviews</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link login-first" title="Enter a Username" style="color:white" href="#">Create a Review</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link login-first" title="Enter a Username" style="color:white" href="#">Add New Beverages</a>
-          </li> -->
-          <!-- <li class="nav-item">
-            <a class="nav-link" title="Enter a Username" style="color:white" href="./index.html">Logout</a>
-          </li> -->
-      </div>
-    </nav>
-    <div>
-      <header id="welcome-home">
-        Welcome to Hydrohomies: Rate and Review Your Favorite Beverages!
-      </header>
-    </div>
-    <div class="error"></div>
+          <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #008080; opacity: 0.8;">
+            <div id="hydrohomies" class="navbar-brand" href="#" style="opacity: 1.0">Hydrohomies</div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <!-- <li class="nav-item addMore">
+                  <a class="nav-link login-first" title="Enter a Username" style="color:white" href="#">See All Reviews</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link login-first" title="Enter a Username" style="color:white" href="#">Create a Review</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link login-first" title="Enter a Username" style="color:white" href="#">Add New Beverages</a>
+                </li> -->
+                <!-- <li class="nav-item">
+                  <a class="nav-link" title="Enter a Username" style="color:white" href="./index.html">Logout</a>
+                </li> -->
+            </div>
+          </nav>
 
-    <div id="sign-in" class="row">
-      <div class="col-sm-6">
-        <div class="card text-white bg-secondary mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Sign in</h5>
-            <form>
-              <div id="user-name" class="form-group">
-                <i class="fas fa-user prefix"></i>
-                <label for="user-name">Username</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="username"
-                  aria-describedby="emailHelp"
-                  placeholder="Username"
-                />
-                <div class="error username-error"> </div>
-              </div>
-              <a id="sign-in-btn" type="button" class="btn btn-primary submitBtn">Sign In
-              </a>
-            </form>
+          <div>
+            <header id="welcome-home">
+              Welcome to Hydrohomies: Rate and Review Your Favorite Beverages!
+            </header>
+          </div>
+      <div class="error"></div>
+
+      <div id="sign-in" class="row">
+        <div class="col-sm-6">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Sign in</h5>
+              <form>
+                <div id="user-name" class="form-group">
+                  <i class="fas fa-user prefix"></i>
+                  <label for="user-name">Username</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    aria-describedby="emailHelp"
+                    placeholder="Username"
+                  />
+                  <div class="error username-error"> </div>
+                </div>
+                <a id="sign-in-btn" type="button" class="btn btn-primary submitBtn">Sign In
+                </a>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="card-title">New to Hydrohomies? Sign up now!</h5>
+  
+              <form>
+                <div class="form-group">
+                  <i class="fas fa-user prefix"></i>
+                  <label for="exampleInputPassword1">Enter a unique hydrohomies username</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="new-username"
+                    placeholder="Username"
+                  />
+                  <div class="error signup-error"> </div>
+                </div>
+                <a id="new-user-btn" type="button" class="btn btn-primary newUserBtn">Create My Account
+                </a>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-6">
-        <div class="card text-white bg-secondary mb-3">
-          <div class="card-body">
-            <h5 class="card-title">New to Hydrohomies? Sign up now!</h5>
 
-            <form>
-              <div class="form-group">
-                <i class="fas fa-user prefix"></i>
-                <label for="exampleInputPassword1">Enter a unique hydrohomies username</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="new-username"
-                  placeholder="Username"
-                />
-                <div class="error signup-error"> </div>
-              </div>
-              <a id="new-user-btn" type="button" class="btn btn-primary newUserBtn">Create My Account
-              </a>
-            </form>
-          </div>
+      <div id="overlay" style="display:none;">
+        <div class="spinner">
+          <br>
         </div>
+        Loading....
       </div>
-    </div>
+  
+      <footer class="mt-3">
+        <p>&copy; Hydrohomies of Bootcamp</p>
+      </footer>  
 
-    <footer class="mt-3">
-      <p>&copy; Hydrohomies of Bootcamp</p>
-    </footer>
 
     <!-- Bootstrap JS-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -131,12 +141,7 @@
       
     </script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
-    <!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen-sprite.png"></script> -->
-    <!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen-sprite@2x.png"></script> -->
-    <!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css"></script> -->
-    <!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css"></script> -->
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.js"></script>
-    <!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"></script> -->
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.proto.js"></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.proto.min.js"></script>
     <script type="text/javascript">
