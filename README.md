@@ -7,44 +7,45 @@ Deployed Site Link - > https://hydro-homies.herokuapp.com/index.html
 
 ## Table of Contents: 
 - [Project: Hydrohomies](#project-hydrohomies)
-  - [Table of Contents:](#table-of-contents)
-  - [License:](#license)
-  - [Description:](#description)
-  - [Installation Instructions:](#installation-instructions)
-  - [Test Command:](#test-command)
-  - [Github:](#github)
-  - [My Email Address:](#my-email-address)
-  - [Other Contributors:](#other-contributors)
-  - [Images:](#images)
+  - [License](#license)
+  - [Description](#description)
+  - [Installation Instructions](#installation-instructions)
+  - [Github](#github)
+  - [Contact Us](#contact-us)
+  - [Other Contributors](#other-contributors)
+  - [Images](#images)
 
 ## License:
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description:
-Jim's Water Supply Company! A blog site for hydrohomies to review and rate carbonated water. 
-The front end modeled after the untapped website. Users could choose from different water brand options, request a new brand be added to the site, and also rate the brands. Users may also be able to click on a button that links them to Amazon and purchase the product. The backend would be tables of brands divided up based on brand, price, flat/carbonated, and flavor.
-
-
+Hydrohomies is an application where users can rate and review beverages of their choice. With a very simple login process and clean, simple UI, it's super simple for a user to create a new review, read the reviews of other users, filter reviews by brand, carbonation, and/or rating, and add new brands and flavors to the application. 
 
 ## Installation Instructions: 
-Steps TBD
-
-## Test Command: 
-To test type COMMAND TBD into the terminal
+To install, type ``` npm install ``` into the terminal. This will install all the required node packages to run the server.
 
 ## Github: 
-Check out more projects from members of this team on  Github at https://github.com/ (ReindeerCode) (arensalmela) (junkoyama) (shannonquinn91) (Jknox031)
+Check out other projects of all contributors on their github accounts:
+James Knox (Jknox031)  
+Shannon Quinn (https://github.com/shannonquinn91)  
+Michael Rudolph (https://github.com/ReindeerCode)  
+Aren Salmela (https://github.com/arensalmela)  
+Junko Yamazaki (https://github.com/junkoyama)
 
-## My Email Address:
-If you have any questions please feel free to email us at our email addresses below:
-Michael Rudolph - ReindeerCode@gmail.com
+## Contact Us:
+If you have any questions please feel free to email us at our email addresses below:  
+James Knox -  
+Shannon Quinn - shannon.quinn91@gmail.com  
+Michael Rudolph - ReindeerCode@gmail.com  
+Aren Salmela - adsalmela@gmail.com  
+Junko Yamazaki - junkoo.yamazaki@gmail.com  
 
 ## Other Contributors:
-Aren Salmela (arensalmela)
-Junko Yamazaki (junkoyama)
-Shannon Quinn (shannonquinn91)
-James Know (Jknox031)
-Michael Rudolph (ReindeerCode)
+James Knox (Jknox031)  
+Shannon Quinn (https://github.com/shannonquinn91)  
+Michael Rudolph (https://github.com/ReindeerCode)  
+Aren Salmela (https://github.com/arensalmela)  
+Junko Yamazaki (https://github.com/junkoyama)
 
 ## Images:
 ![Project Screenshot](./public/assets/sign_in.png)
@@ -54,7 +55,5 @@ Michael Rudolph (ReindeerCode)
 ![Project Screenshot](./public/assets/create_review.png)
 
 ![Project Screenshot](./public/assets/delete_review.png)
-
-![Project Screenshot](./public/assets/edit.png)
 
 ![Project Screenshot](./public/assets/edit.png)
