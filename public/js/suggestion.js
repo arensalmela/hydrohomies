@@ -1,9 +1,18 @@
 $(document).ready(function () {
+  $("a").click(function () {
+    $("#overlay").fadeIn().delay(2000).fadeOut();
+  });
+
   //***clear local storage on logout==========================================
   $("#logOutBTN").on("click", function () {
     return localStorage.clear();
   });
+
   $(".addNewBrand").on("click", function () {
+    const loadSpinner = $("a").click(function () {
+      $("#overlay").fadeIn().delay(2000).fadeOut();
+    });
+
     var typeNewBrand = $("#typeNewBrand").val();
     console.log("adding brand?");
     if (typeNewBrand === "") {
@@ -54,4 +63,22 @@ $(document).ready(function () {
       });
     }
   });
+  $(document).on("click", ".deleteNewBrand", function () {
+    const id = $("#typeNewBrand").val();
+    $.ajax({
+      method: "DELETE",
+      url: "/api/Brands/" + id,
+    }).then(callReviews);
+  });
+
+  $(document).on("click", ".deleteNewFlavor", function () {
+    const id = $("#typeNewFlavor").val();
+    $.ajax({
+      method: "DELETE",
+      url: "/api/flavors/" + id,
+    }).then(callReviews);
+  });
+
+
+
 });

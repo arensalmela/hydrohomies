@@ -33,39 +33,39 @@ module.exports = function (app) {
   app.post("/api/brands", function (req, res) {
     console.log(req.body.brand_name);
 
-    db.Brand.create({ brand_name: req.body.brand_name })
-    .then(function (dbBrand) {
+    db.Brand.create({ brand_name: req.body.brand_name }).then(function (
+      dbBrand
+    ) {
       res.json(dbBrand);
     });
   });
 
   //***add new flavor==================================
   app.post("/api/flavors", function (req, res) {
-    db.Flavor.create({flavor: req.body.flavor})
-    .then(function (dbFlavor) {
+    db.Flavor.create({ flavor: req.body.flavor }).then(function (dbFlavor) {
       res.json(dbFlavor);
     });
   });
 
   //***delete a brand==================================
-  // app.delete("/api/Brands/:id", function (req, res) {
-  //   db.Brand.destroy({
-  //     where: {
-  //       id: req.params.id,
-  //     },
-  //   }).then(function (dbBrand) {
-  //     res.json(dbBrand);
-  //   });
-  // });
+  app.delete("/api/Brands/:id", function (req, res) {
+    db.Brand.destroy({
+      where: {
+        brand_name: req.params.id,
+      },
+    }).then(function (dbBrand) {
+      res.json(dbBrand);
+    });
+  });
 
   //***delete a flavor==================================
-  // app.delete("/api/flavors/:id", function (req, res) {
-  //   db.Flavor.destroy({
-  //     where: {
-  //       id: req.params.id,
-  //     },
-  //   }).then(function (dbFlavor) {
-  //     res.json(dbFlavor);
-  //   });
-  // });
+   app.delete("/api/flavors/:id", function (req, res) {
+     db.Flavor.destroy({
+       where: {
+         flavor: req.params.id,
+       },
+    }).then(function (dbFlavor) {
+       res.json(dbFlavor);
+     });
+   });
 };

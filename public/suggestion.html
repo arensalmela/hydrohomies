@@ -66,9 +66,10 @@
       <header id="welcome-home">Don't see a brand or flavor? Add it here and share with the hydrohomies!</header>
     </div>
     <!--End page header-->
-
+    <br>
+    <br>
     <!--Start container for suggestion form "container contactForm"-->
-    <div class="card text-white bg-secondary mb-3 contactForm">
+    <div class="card container text-white bg-secondary mb-3 contactForm">
         <form class="text-center border border-light p-5" action="#!">
           <!-- <p id="welcome" class="h4 mb-4">
             Don't see a brand or flavor you want to tell us about? Tell us about it!
@@ -84,8 +85,12 @@
                     placeholder="Add Brand Here"
                     style="width:350px"
                 />
-                <a id="add-brand-btn" type="button" class="addNewBrand btn btn-primary"> Add Brand
-                </a>
+                <div><a id="add-brand-btn" type="button" class="addNewBrand btn btn-primary"> Add Brand
+                </a></div>
+                <br>
+                <div><a id="delete-brand-btn" type="button" class="deleteNewBrand btn btn-primary"> Delete Brand
+                </a></div>
+                
                 <!-- Junko note to self: fix the CSS on this later -->
                 <div id="add-brand-error"></div>                
             </div>
@@ -101,8 +106,15 @@
                     placeholder="Add Flavor Here"
                     style="width:350px"
                 />
-                <a id="add-flavor-btn" type="button" class="addNewFlavor btn btn-primary"> Add Flavor
-                </a>
+                <div class="addBrandHere">
+                 <a id="add-flavor-btn" type="button" class="addNewFlavor btn btn-primary"> Add Flavor
+                </a>                 
+                </div>
+                <hr>
+                <div class="addFlavHere">
+                 <a id="delete-flavor-btn" type="button" class="deleteNewFlavor btn btn-primary"> Delete Flavor
+                </a>                 
+                </div>
                 <!-- Junko note to self: fix the CSS on this later -->
                 <div id="add-flavor-error"></div>                      
             </div>
@@ -110,6 +122,13 @@
         </form>
       </div>
       <!--End of container for suggestion-->
+
+      <div id="overlay" style="display:none;">
+        <div class="spinner">
+          <br>
+        </div>
+        Loading....
+      </div>
     
 
     <footer class="mt-3">

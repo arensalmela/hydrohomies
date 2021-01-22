@@ -6,6 +6,10 @@ $(document).ready(function () {
 
   //***user entry error checks==========================================
   $("#submitBTN").on("click", function () {
+    const loadSpinner = $("a").click(function () {
+      $("#overlay").fadeIn().delay(2000).fadeOut();
+    });
+
     $("#newReviewTitleErrMsg").html("");
     $("#newReviewBodyErrMsg").html("");
     $("#dropdownErrMsg").html("");
@@ -47,6 +51,7 @@ $(document).ready(function () {
       $("#newReviewBodyErrMsg").append($("<p>Please write a review</p>"));
       return;
     } else {
+      loadSpinner();
     }
 
     //*dropdown menus errors==========================================
@@ -116,7 +121,7 @@ $(document).ready(function () {
 
   $.ajax({ method: "GET", url: "/api/bubbles" }).done((result) => {
     $("#bubbles").append(`<option selected>Select Bubbles</option>`);
-    console.log(result)
+    console.log(result);
     result.forEach((bubbles) => {
       if (bubbles !== "" || bubbles !== null) {
         if (bubbles.bubbles === true) {
