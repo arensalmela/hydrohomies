@@ -1,7 +1,4 @@
 $(document).ready(function () {
-  $("a").click(function () {
-    $("#overlay").fadeIn().delay(2000).fadeOut();
-  });
 
   //***clear local storage on logout==========================================
   $("#logOutBTN").on("click", function () {
@@ -9,9 +6,6 @@ $(document).ready(function () {
   });
 
   $(".addNewBrand").on("click", function () {
-    const loadSpinner = $("a").click(function () {
-      $("#overlay").fadeIn().delay(2000).fadeOut();
-    });
 
     var typeNewBrand = $("#typeNewBrand").val();
     console.log("adding brand?");
@@ -20,12 +14,13 @@ $(document).ready(function () {
       $("#typeNewBrand").text("Please enter a brand");
       $("#typeNewBrand").attr(
         "style",
-        "border: 2px solid red; border-radius: 4px"
+        "border: 2px solid red; border-radius: 4px; width:350px;"
       );
       $("#typeNewBrand").attr("placeholder", "Please enter a brand");
       $("#add-brand-error").text("Please enter a brand");
     } else {
       $(".addNewBrand").attr("href", "./posts.html");
+
 
       const newBrand = {
         brand_name: typeNewBrand,
@@ -37,6 +32,7 @@ $(document).ready(function () {
       }).done(function (response) {
         console.log(response);
       });
+
     }
   });
 
@@ -46,7 +42,7 @@ $(document).ready(function () {
     if (addNewFlavor === "") {
       $("#typeNewFlavor").text("Please enter a flavor");
       $("#typeNewFlavor")
-        .attr("style", "border: 2px solid red; border-radius: 4px")
+        .attr("style", "border: 2px solid red; border-radius: 4px; width:350px;")
         .attr("placeholder", "Please enter a flavor");
       $("#add-flavor-error").text("Please enter a flavor");
     } else {
@@ -65,17 +61,47 @@ $(document).ready(function () {
   });
   $(document).on("click", ".deleteNewBrand", function () {
     const id = $("#typeNewBrand").val();
-    $.ajax({
-      method: "DELETE",
-      url: "/api/Brands/" + id,
-    }).then(callReviews);
+    
+    if (id === "") {
+      $("#add-brand-error").text("");
+      $("#deleteBrandSuccess").text("Please enter a brand");
+    } else {
+      $("#typeNewBrand").val("");
+      $("#add-brand-error").text("");
+      // $("#deleteBrandSuccess").text(`Success! The brand "${id}" has been deleted`).attr("style", "color:#66FF00;");
+      $("#delete-brand-btn").attr("href", "./posts.html");
+
+      $.ajax({
+        method: "DELETE",
+        url: "/api/Brands/" + id,
+      }).then(callReviews);
+
+      
+    };
+
   });
 
   $(document).on("click", ".deleteNewFlavor", function () {
+    console.log("is this button working?");
+
     const id = $("#typeNewFlavor").val();
-    $.ajax({
-      method: "DELETE",
-      url: "/api/flavors/" + id,
-    }).then(callReviews);
+    if(id === "") {
+      $("#add-flavor-error").text("");
+      $("#deleteFlavorSuccess").text("Please enter a flavor");
+    } else {
+      $("#typeNewFlavor").val("");
+      $("#add-flavor-error").text("");
+      // $("#deleteFlavorSuccess").text(`Success! The flavor "${id}" has been deleted`).attr("style", "color:#66FF00;");
+      $("#delete-flavor-btn").attr("href", "./posts.html");
+      
+      $.ajax({
+        method: "DELETE",
+        url: "/api/flavors/" + id,
+      }).then(callReviews);
+
+        
+    };
+
   });
+
 });
