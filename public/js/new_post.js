@@ -80,7 +80,7 @@ $(document).ready(function () {
     }).done(function (response) {
       console.log(response);
     });
-
+    // redirects to the All reviews page
     $(this).attr("href", "./posts.html");
   });
 

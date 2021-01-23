@@ -1,3 +1,5 @@
+//For future use with username / PW authentication
+
 module.exports = function (sequelize, DataTypes) {
   const User = sequelize.define(
     "User",
