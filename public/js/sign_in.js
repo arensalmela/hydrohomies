@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  //Saves username to local storage for use on review cards and to get delete button on reviews by this author
     $("#sign-in-btn").on("click", function () {
     var userName = $("#username").val();
     localStorage.setItem("userName", userName);
@@ -12,7 +13,7 @@ $(document).ready(function () {
       $("#sign-in-btn").attr("href", "./posts.html");
     }
   });
-
+//Saves username to local storage for use on review cards and to get delete button on reviews by this author
   $("#new-user-btn").on("click", function () {
     var newUser = $("#new-username").val();
     localStorage.setItem("userName", newUser);

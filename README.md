@@ -47,11 +47,11 @@ Junko Yamazaki - junkoo.yamazaki@gmail.com
 
 ## Other Contributors:
 
-James Knox (https://github.com/Pregicide)  
-Shannon Quinn (https://github.com/shannonquinn91)  
-Michael Rudolph (https://github.com/ReindeerCode)  
-Aren Salmela (https://github.com/arensalmela)  
-Junko Yamazaki (https://github.com/junkoyama)
+James Knox (https://github.com/Pregicide) - WORKED ON FRONT END
+Shannon Quinn (https://github.com/shannonquinn91) - WORKED ON FRONT END
+Michael Rudolph (https://github.com/ReindeerCode) - WORKED ON BACK END
+Aren Salmela (https://github.com/arensalmela)  - WORKED ON BACK END
+Junko Yamazaki (https://github.com/junkoyama) - WORKED ON FRONT END
 
 ## Images:
 

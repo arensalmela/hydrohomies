@@ -4,6 +4,7 @@ $(document).ready(function () {
     return localStorage.clear();
   });
 
+  // Add Brand event listener
   $(".addNewBrand").on("click", function () {
     var typeNewBrand = $("#typeNewBrand").val();
     console.log("adding brand?");
@@ -19,6 +20,7 @@ $(document).ready(function () {
     } else {
       $(".addNewBrand").attr("href", "./newPost.html");
 
+      // Object for adding new brand name to Brand table
       const newBrand = {
         brand_name: typeNewBrand,
       };
@@ -32,6 +34,7 @@ $(document).ready(function () {
     }
   });
 
+  // Add Flavor event listener
   $(".addNewFlavor").on("click", function () {
     var addNewFlavor = $("#typeNewFlavor").val();
     console.log("adding flavor?");
@@ -46,6 +49,8 @@ $(document).ready(function () {
       $("#add-flavor-error").text("Please enter a flavor");
     } else {
       $(".addNewFlavor").attr("href", "./newPost.html");
+
+      //object for adding new flavor to flavor table
       const newFlavor = {
         flavor: addNewFlavor,
       };
@@ -58,6 +63,8 @@ $(document).ready(function () {
       });
     }
   });
+
+  //Delete Brand button event listener
   $(document).on("click", ".deleteNewBrand", function () {
     const id = $("#typeNewBrand").val();
 
@@ -67,9 +74,11 @@ $(document).ready(function () {
     } else {
       $("#typeNewBrand").val("");
       $("#add-brand-error").text("");
+      // next line of code for future development
       // $("#deleteBrandSuccess").text(`Success! The brand "${id}" has been deleted`).attr("style", "color:#66FF00;");
       $("#delete-brand-btn").attr("href", "./newPost.html");
 
+      //Deleting brand
       $.ajax({
         method: "DELETE",
         url: "/api/Brands/" + id,
@@ -77,6 +86,7 @@ $(document).ready(function () {
     }
   });
 
+  // Delete Flavor button event listener
   $(document).on("click", ".deleteNewFlavor", function () {
     console.log("is this button working?");
 
@@ -87,8 +97,11 @@ $(document).ready(function () {
     } else {
       $("#typeNewFlavor").val("");
       $("#add-flavor-error").text("");
+      // next line of code for future development
       // $("#deleteFlavorSuccess").text(`Success! The flavor "${id}" has been deleted`).attr("style", "color:#66FF00;");
       $("#delete-flavor-btn").attr("href", "./posts.html");
+
+      // Deleting flavor
 
       $.ajax({
         method: "DELETE",
