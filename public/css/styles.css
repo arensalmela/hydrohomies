@@ -38,7 +38,7 @@
 }
 
 body {
-  background-image: url(/assets/strawberrySplash.jpeg);
+  background-image: url(../assets/strawberrySplash.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -201,4 +201,8 @@ footer {
 
 .card-title {
   font-style: italic;
+}
+#add-brand-error, #add-flavor-error, #deleteFlavorSuccess, #deleteBrandSuccess {
+  color: red;
+  text-align: center;
 }

@@ -26,7 +26,7 @@ To install, type ``` npm install ``` into the terminal. This will install all th
 
 ## Github: 
 Check out other projects of all contributors on their github accounts:
-James Knox (Jknox031)  
+James Knox (https://github.com/Pregicide)  
 Shannon Quinn (https://github.com/shannonquinn91)  
 Michael Rudolph (https://github.com/ReindeerCode)  
 Aren Salmela (https://github.com/arensalmela)  
@@ -34,14 +34,14 @@ Junko Yamazaki (https://github.com/junkoyama)
 
 ## Contact Us:
 If you have any questions please feel free to email us at our email addresses below:  
-James Knox -  
+James Knox -  jknox031@me.com
 Shannon Quinn - shannon.quinn91@gmail.com  
 Michael Rudolph - ReindeerCode@gmail.com  
 Aren Salmela - adsalmela@gmail.com  
 Junko Yamazaki - junkoo.yamazaki@gmail.com  
 
 ## Other Contributors:
-James Knox (Jknox031)  
+James Knox (https://github.com/Pregicide)  
 Shannon Quinn (https://github.com/shannonquinn91)  
 Michael Rudolph (https://github.com/ReindeerCode)  
 Aren Salmela (https://github.com/arensalmela)  
