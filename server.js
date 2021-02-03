@@ -1,5 +1,6 @@
 // *** Dependencies================================================
 const express = require("express");
+const compression = require("compression");
 require("dotenv").config();
 
 // *** Sets up the Express App=======================================
@@ -11,6 +12,7 @@ let db = require("./models");
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
+app.use(compression({ filter: shouldCompress }));
 app.use(express.json());
 app.use(express.text());
 app.use(express.json({ type: "application/vnd.api+json" }));
@@ -29,6 +31,7 @@ db.sequelize.sync().then(function () {
   app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
+
   // const flavor1 = db.Flavor.create({
   //   flavor: "Lime",
   // }).then();
@@ -180,3 +183,12 @@ db.sequelize.sync().then(function () {
   //   user_name: "aren",
   // });
 });
+function shouldCompress(req, res) {
+  if (req.headers["x-no-compression"]) {
+    // don't compress responses with this request header
+    return false;
+  }
+
+  // fallback to standard filter function
+  return compression.filter(req, res);
+}

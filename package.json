@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/arensalmela/hydrohomies#readme",
   "dependencies": {
+    "compression": "^1.7.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "inquirer": "^7.3.3",
