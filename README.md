@@ -12,6 +12,7 @@ Utilized https://github.com/harvesthq/chosen as a new technology.
   - [License:](#license)
   - [Description:](#description)
   - [Installation Instructions:](#installation-instructions)
+  - [Usage Instructions:](#usage-instructions)
   - [Github:](#github)
   - [Contact Us:](#contact-us)
   - [Other Contributors:](#other-contributors)
@@ -33,7 +34,7 @@ Hydrohomies is an application where users can rate and review beverages of their
 
 To install, type `npm install` into the terminal. This will install all the required node packages to run the server. Start the application by typing `npm start` into the terminal. 
 
-*Instructions-
+## Usage Instructions: 
 To view recent reviews either create a new user ID or log in with an existing ID. You can use filter options to narrow down results.
 Once logged in you can also write a new review by clicking the Create A Review option in the navbar. On the Create page you can use the dropdown options and text areas to review your favorite water.
 If the options you need are not listed in the dropdowns you can select the Add New Beverage tab in the Navbar to add a new brand or Flavor. You can also delete a brand or flavor from this page.
