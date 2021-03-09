@@ -1,19 +1,21 @@
 # Project: Hydrohomies
 
+Deployed Site Link - > https://hydro-homies.herokuapp.com/index.html
+
 Utilized https://github.com/harvesthq/chosen as a new technology.
 
-Deployed Site Link - > https://hydro-homies.herokuapp.com/index.html
 
 ## Table of Contents:
 
 - [Project: Hydrohomies](#project-hydrohomies)
-  - [License](#license)
-  - [Description](#description)
-  - [Installation Instructions](#installation-instructions)
-  - [Github](#github)
-  - [Contact Us](#contact-us)
-  - [Other Contributors](#other-contributors)
-  - [Images](#images)
+  - [Table of Contents:](#table-of-contents)
+  - [License:](#license)
+  - [Description:](#description)
+  - [Installation Instructions:](#installation-instructions)
+  - [Github:](#github)
+  - [Contact Us:](#contact-us)
+  - [Other Contributors:](#other-contributors)
+  - [Images:](#images)
 
 ## License:
 
@@ -21,11 +23,15 @@ Deployed Site Link - > https://hydro-homies.herokuapp.com/index.html
 
 ## Description:
 
+Problem: 
+
+How do we pick something as important as the water we drink? Now-a-days people want to know if a product is good before they buy it, and they also don't want to be swayed by marketing. 
+
 Hydrohomies is an application where users can rate and review beverages of their choice. With a very simple login process and clean, simple UI, it's super simple for a user to create a new review, read the reviews of other users, filter reviews by brand, carbonation, and/or rating, and add new brands and flavors to the application.
 
 ## Installation Instructions:
 
-To install, type `npm install` into the terminal. This will install all the required node packages to run the server.
+To install, type `npm install` into the terminal. This will install all the required node packages to run the server. Start the application by typing `npm start` into the terminal. 
 
 ## Github:
 
